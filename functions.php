@@ -2,6 +2,61 @@
 /**Theme Name	: Appointment
  * Theme Core Functions and Codes
 */
+
+require_once 'plugin-update-checker-4.10/plugin-update-checker.php';
+
+
+
+
+
+/*
+
+ * Plugin Update Checker Setting
+
+ *
+
+ * @see https://github.com/YahnisElsts/plugin-update-checker for more details.
+
+ */
+
+function my_plugin_update_checker_setting() {
+
+    if ( ! is_admin() || ! class_exists( 'Puc_v4_Factory' ) ) {
+
+        return;
+
+    }
+
+
+
+    $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+
+        'https://github.com/TravelTec/templatewp',
+
+        __FILE__,
+
+        'templatewp'
+
+    );
+
+    
+
+    // (Opcional) If you're using a private repository, specify the access token like this:
+
+    $myUpdateChecker->setAuthentication('your-token-here');
+
+
+
+    // (Opcional) Set the branch that contains the stable release.
+
+    $myUpdateChecker->setBranch('main');
+
+}
+
+
+
+add_action( 'admin_init', 'my_plugin_update_checker_setting' );
+
 	/**Includes reqired resources here**/
 	define('WEBRITI_TEMPLATE_DIR_URI', get_template_directory_uri());
     define('WEBRITI_TEMPLATE_DIR' , get_template_directory());
