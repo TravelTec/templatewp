@@ -450,4 +450,25 @@
 		background-color: #<?=(empty($color) ? '#ffffff' : $color)?> !important;
 	}
 </style>
-<?php } ?>
+<?php } ?> 
+
+<?php if($_SERVER['REQUEST_URI'] == '/'){ ?>
+
+<?php }else{ ?>
+	<style type="text/css">
+		.featured-trip .grid .col{
+			width: 100% !important;
+		}
+		.featured-trip .container{
+			width: 100% !important;
+		}
+	</style>
+<?php } ?> 
+
+<style type="text/css">
+	@media (max-width: 668px){
+		.featured-trip .grid .col{
+			width: 100% !important;
+		}
+	}
+</style>

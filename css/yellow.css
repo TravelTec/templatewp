@@ -17,8 +17,7 @@ iframe{
 .category-trips-single .category-trips-single-inner-wrap{
     text-align: left;
 }
-.category-trips-single {
-    width: 33.33% !important;
+.category-trips-single { 
     padding: 5px 22.5px;
     margin-bottom: 40px;
     font-size: 18px;
