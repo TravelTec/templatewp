@@ -220,7 +220,7 @@
 
 						}
 
-					$social .='><i class="fa fa-facebook"></i></a></li>';
+					$social .='><i class="fab fa-facebook"></i></a></li>';
 
 					}
 
@@ -236,7 +236,7 @@
 
 						}
 
-					$social .='><i class="fa fa-twitter"></i></a></li>';
+					$social .='><i class="fab fa-twitter"></i></a></li>';
 
 					
 
@@ -254,7 +254,7 @@
 
 						}
 
-					$social .='><i class="fa fa-linkedin"></i></a></li>';
+					$social .='><i class="fab fa-linkedin-in"></i></a></li>';
 
 					}
 
@@ -272,7 +272,7 @@
 
 						}
 
-					$social .='><i class="fa fa-google-plus"></i></a></li>';
+					$social .='><i class="fab fa-google-plus-g"></i></a></li>';
 
 					}
 
@@ -290,7 +290,7 @@
 
 						}
 
-					$social .='><i class="fa fa-instagram"></i></a></li>';
+					$social .='><i class="fab fa-instagram"></i></a></li>';
 
 					}
 
@@ -308,7 +308,7 @@
 
 						}
 
-					$social .='><i class="fa fa-skype"></i></a></li>';
+					$social .='><i class="fab fa-skype"></i></a></li>';
 
 					}
 
@@ -328,7 +328,7 @@
 
 						}
 
-					$social .='><i class="fa fa-youtube"></i></a></li>';
+					$social .='><i class="fab fa-youtube"></i></a></li>';
 
 					}
 

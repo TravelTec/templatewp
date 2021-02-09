@@ -88,31 +88,31 @@ $footer_setting = wp_parse_args(  get_option( 'appointment_options', array() ), 
 
 					<?php if($footer_setting['footer_social_media_facebook_link']!='') { ?>
 
-					<li class="facebook"><a href="<?php echo $footer_facebook; ?>" <?php if($footer_setting['footer_facebook_link_taregt']==1){ echo "target='_blank'"; } ?> ><i class="fa fa-facebook"></i></a></li>
+					<li class="facebook"><a href="<?php echo $footer_facebook; ?>" <?php if($footer_setting['footer_facebook_link_taregt']==1){ echo "target='_blank'"; } ?> ><i class="fab fa-facebook"></i></a></li>
 
 					<?php } if($footer_setting['footer_social_media_twitter_link']!='') { ?>
 
-					<li class="twitter"><a href="<?php echo $footer_twitter; ?>" <?php if($footer_setting['footer_twitter_link_taregt']==1){ echo "target='_blank'"; } ?> ><i class="fa fa-twitter"></i></a></li>
+					<li class="twitter"><a href="<?php echo $footer_twitter; ?>" <?php if($footer_setting['footer_twitter_link_taregt']==1){ echo "target='_blank'"; } ?> ><i class="fab fa-twitter"></i></a></li>
 
 					<?php } if($footer_setting['footer_social_media_linkedin_link']!='') { ?>
 
-					<li class="linkedin"><a href="<?php echo $footer_linkdin; ?>" <?php if($footer_setting['footer_linkdin_link_taregt']==1){ echo "target='_blank'"; } ?> ><i class="fa fa-linkedin"></i></a></li>
+					<li class="linkedin"><a href="<?php echo $footer_linkdin; ?>" <?php if($footer_setting['footer_linkdin_link_taregt']==1){ echo "target='_blank'"; } ?> ><i class="fab fa-linkedin-in"></i></a></li>
 
 					<?php } if($footer_setting['footer_social_media_googleplus_link']!='') { ?>
 
-					<li class="googleplus"><a href="<?php echo $footer_googleplus; ?>" <?php if($footer_setting['footer_googleplus_link_taregt']==1){ echo "target='_blank'"; } ?> ><i class="fa fa-google-plus"></i></a></li>
+					<li class="googleplus"><a href="<?php echo $footer_googleplus; ?>" <?php if($footer_setting['footer_googleplus_link_taregt']==1){ echo "target='_blank'"; } ?> ><i class="fab fa-google-plus-g"></i></a></li>
 
 					<?php } if($footer_setting['footer_social_media_skype_link']!='') { ?>
 
-					<li class="skype"><a href="<?php echo $footer_skype; ?>" <?php if($footer_setting['footer_skype_link_taregt']==1){ echo "target='_blank'"; } ?> ><i class="fa fa-skype"></i></a></li>
+					<li class="skype"><a href="<?php echo $footer_skype; ?>" <?php if($footer_setting['footer_skype_link_taregt']==1){ echo "target='_blank'"; } ?> ><i class="fab fa-skype"></i></a></li>
 
 					<?php } if($footer_setting['footer_social_media_instagram_link']!='') { ?>
 
-					<li class="instagram"><a href="<?php echo $footer_instagram; ?>" <?php if($footer_setting['footer_instagram_link_taregt']==1){ echo "target='_blank'"; } ?> ><i class="fa fa-instagram"></i></a></li>
+					<li class="instagram"><a href="<?php echo $footer_instagram; ?>" <?php if($footer_setting['footer_instagram_link_taregt']==1){ echo "target='_blank'"; } ?> ><i class="fab fa-instagram"></i></a></li>
 
 					<?php } if($footer_setting['footer_social_media_youtube_link']!='') { ?>
 
-					<li class="youtube"><a href="<?php echo $footer_youtube; ?>" <?php if($footer_setting['footer_youtube_link_taregt']==1){ echo "target='_blank'"; } ?> ><i class="fa fa-youtube"></i></a></li>
+					<li class="youtube"><a href="<?php echo $footer_youtube; ?>" <?php if($footer_setting['footer_youtube_link_taregt']==1){ echo "target='_blank'"; } ?> ><i class="fab fa-youtube"></i></a></li>
 
 					<?php } ?>
 
