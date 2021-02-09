@@ -424,7 +424,7 @@
 
 <?php $color = get_background_color(); ?>
 
-<?php if(!isset($_GET['page_id'])){ ?> 
+<?php if($_SERVER['REQUEST_URI'] == '/'){ ?> 
 
 <style type="text/css">
 	.page-title-section{

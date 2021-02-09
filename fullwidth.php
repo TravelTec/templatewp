@@ -14,7 +14,15 @@ get_template_part('index','banner'); ?>
 
 <div class="page-builder">
 
-	<div class="container-fluid">
+	<?php if($_SERVER['REQUEST_URI'] == '/'){ ?> 
+
+		<div class="container-fluid">
+
+	<?php }else{ ?>
+
+		<div class="container">
+
+	<?php } ?>
 
 		<div class="row">
 

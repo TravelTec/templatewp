@@ -19,7 +19,7 @@ require_once 'plugin-update-checker-4.10/plugin-update-checker.php';
 
  */
 
-function my_plugin_update_checker_setting() {
+function my_theme_update_checker_setting() {
 
     if ( ! is_admin() || ! class_exists( 'Puc_v4_Factory' ) ) {
 
@@ -55,7 +55,7 @@ function my_plugin_update_checker_setting() {
 
 
 
-add_action( 'admin_init', 'my_plugin_update_checker_setting' );
+add_action( 'admin_init', 'my_theme_update_checker_setting' );
 
 	/**Includes reqired resources here**/
 	define('WEBRITI_TEMPLATE_DIR_URI', get_template_directory_uri());
