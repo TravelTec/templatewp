@@ -14,7 +14,7 @@
 
 	$appointment_options=theme_setup_data(); 
 
-	$header_setting = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_options); 
+	$header_setting = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_options);  
 
 	if($header_setting['upload_image_favicon']!=''){ ?>
 
@@ -422,18 +422,7 @@
 
 <div class="clearfix"></div>
 
-<?php $color = get_background_color(); ?>
-
-<?php if($_SERVER['REQUEST_URI'] == '/'){ ?> 
-
-<style type="text/css">
-	.page-title-section{
-		display: none !important;
-	}
-	.page-builder { margin: 0px; padding: 0; }
-</style> 
-
-<?php } ?>
+<?php $color = get_background_color(); ?> 
 
 <?php if($_GET['page_id'] == 11){ ?> 
 

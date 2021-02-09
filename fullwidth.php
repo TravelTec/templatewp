@@ -2,27 +2,38 @@
 
 /**
 
-Template Name: Fullwidth
+Template Name: Largura total sem barra
 
 */
 
-get_header();
-
-get_template_part('index','banner'); ?>
+get_header(); ?>
 
 <!-- Blog Section with Sidebar -->
 
-<div class="page-builder">
+<style type="text/css">
+	.page-title-section{
+		display: none !important;
+	}
+	.page-builder { margin: 0px; padding: 0; }
+	.featured-trip .grid .col{
+		width: 33.33% !important;
+	}
+	.featured-trip{
+		padding: 0 90px;
+	}
+	@media (max-width: 767px){
+	.featured-trip .grid .col{
+		width: 100% !important;
+	} 
+	.featured-trip{
+		padding: 0;
+	}
+}
+</style>
 
-	<?php if($_SERVER['REQUEST_URI'] == '/'){ ?> 
+<div class="page-builder"> 
 
-		<div class="container-fluid">
-
-	<?php }else{ ?>
-
-		<div class="container">
-
-	<?php } ?>
+	<div class="container-fluid"> 
 
 		<div class="row">
 

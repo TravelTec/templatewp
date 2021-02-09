@@ -1,67 +1,83 @@
-<?php
-get_header();
-get_template_part('index','banner'); ?>
-<!-- Blog Section with Sidebar -->
-<div class="page-builder">
-	<div class="container">
-		<div class="row">
-			<!-- Blog Area -->
-			<?php 
-				if ( class_exists( 'WooCommerce' ) ) {
-					
-					if( is_account_page() || is_cart() || is_checkout() ) {
-							echo '<div class="col-md-'.( !is_active_sidebar( "woocommerce" ) ?"12" :"8" ).'">'; 
-					}
-					else{ 
-				
-					echo '<div class="col-md-'.( !is_active_sidebar( "sidebar-primary" ) ?"12" :"8" ).'">'; 
-					
-					}
-					
-				}
-				else{ 
-				
-					echo '<div class="col-md-'.( !is_active_sidebar( "sidebar-primary" ) ?"12" :"8" ).'">';
-					
-					} ?>
-			
-			
-			
-			<?php if( $post->post_content != "" )
-			{ ?>
-			<div class="blog-lg-area-left">
-			<?php if( have_posts()) :  the_post(); ?>		
-			<?php the_content(); ?>
-				<?php endif; ?>
-			</div>
-			<?php } ?>
-				<?php comments_template( '', true ); // show comments ?>
-			</div>
-			<!-- /Blog Area -->			
-			<!--Sidebar Area-->
-			<div class="col-md-4">
-				<?php 
-				if ( class_exists( 'WooCommerce' ) ) {
-					
-					if( is_account_page() || is_cart() || is_checkout() ) {
-							get_sidebar('woocommerce'); 
-					}
-					else{ 
-				
-					get_sidebar(); 
-					
-					}
-					
-				}
-				else{ 
-				
-					get_sidebar(); 
-					
-					} ?>
-			</div>
-			<!--Sidebar Area-->
-		</div>
-	</div>
-</div>
-<!-- /Blog Section with Sidebar -->
+<?php
+
+
+
+get_header();
+
+get_template_part('index','banner');
+
+?>
+
+<style type="text/css">
+	.featured-trip .grid .col{
+		width: 33.33% !important;
+	}
+	.wpsm_service_b_row{
+		width: 100% !important;
+	}
+
+	.justify-content-center{
+	    justify-content: center!important;
+	} 
+	.row {
+	    margin-right: -15px;
+	    margin-left: -15px;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	    margin-right: -15px;
+	    margin-left: -15px;
+	}
+	@media (min-width: 768px){
+		.row{
+			margin: 0 35px;
+		}
+		div#n2-ss-2 .n2-ss-slider-1{
+			margin: 0 138px;
+		}
+	}
+
+	@media (max-width: 767px){
+	.featured-trip .grid .col{
+		width: 100% !important;
+	}
+	div#n2-ss-2 .n2-ss-slider-1{
+		padding: 0 15px;
+	}
+}
+</style>
+
+<div class="clearfix"></div>
+
+<!-- Blog Section with Sidebar -->
+
+<div class="page-builder">
+
+	<div class="container">
+
+		<div class="row justify-content-center">
+
+		 <!-- Blog Area -->
+
+			<div class="col-md-12">
+
+				<?php the_content(); ?>
+
+				<!-- /Blog Pagination -->
+
+			</div>
+
+			<!-- /Blog Area --> 
+
+		</div>
+
+	</div>
+
+</div>
+
+<!-- /Blog Section with Sidebar -->
+
+<div class="clearfix"></div>
+
 <?php get_footer(); ?>

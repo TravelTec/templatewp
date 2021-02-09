@@ -3,8 +3,8 @@ function custom_light() {
 	
 	$appointment_options=theme_setup_data(); 
 	$current_options = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_options );
-	$link_color = str_replace("#", "", $appointment_options['link_color']);
-	list($r, $g, $b) = sscanf($appointment_options['link_color'], "#%02x%02x%02x");
+	$link_color = str_replace("#", "", $current_options['link_color']);
+	list($r, $g, $b) = sscanf($current_options['link_color'], "#%02x%02x%02x");
 	$r = $r - 50;
 	$g = $g - 25;
 	$b = $b - 40;
@@ -16,14 +16,14 @@ iframe{
 	width: 762px !important;
 } 
 .slide-btn-sm, .slide-btn-sm{
-    background-color: #139298 !important;
+    background-color: #<?php echo $link_color; ?> !important;
 }
 .callout-btn2{
-    background-color: #139298 !important;
+    background-color: #<?php echo $link_color; ?> !important;
 }
 
 .featured-trip .grid-latest .text-holder .meta-info svg, .our-deals .grid-latest .text-holder .meta-info svg{
-        fill: #139298;
+        fill: #<?php echo $link_color; ?>;
 }
 
 .trip-post img{
@@ -120,11 +120,16 @@ iframe{
 .category-trips-single .category-trips-single-inner-wrap{
     text-align: left;
 }
-.category-trips-single {
-    width: 100% !important;
+.category-trips-single { 
     padding: 5px 22.5px;
     margin-bottom: 40px;
     font-size: 18px;
+}
+div.wpforms-container-full{
+    text-align: left;
+}
+div.wpforms-container-full .wpforms-form .wpforms-field-label{
+    font-weight: 700 !important;
 }
 .activities:before {
     position: absolute;
