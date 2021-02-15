@@ -466,7 +466,7 @@
 			width: 100% !important;
 		}
 	} 
-	.footer-section.site-footer ul li, ul li a, ol li, ol li a{
+	.page_item a{
 		color: <?=$header_setting['footer_text_color'];?> !important;
 	}
 </style> 
