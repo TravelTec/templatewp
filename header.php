@@ -466,7 +466,7 @@
 			width: 100% !important;
 		}
 	} 
-	.footer-sidebar li a{
+	.footer-sidebar li a, .custom-html-widget{
 		color: <?=$header_setting['footer_text_color'];?>;
 	}
 </style> 
