@@ -466,7 +466,7 @@
 			width: 100% !important;
 		}
 	} 
-	.page_item a{
-		color: <?=$header_setting['footer_text_color'];?> !important;
+	.footer-sidebar li a{
+		color: <?=$header_setting['footer_text_color'];?>;
 	}
 </style> 
