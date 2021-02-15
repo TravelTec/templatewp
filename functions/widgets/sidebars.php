@@ -56,67 +56,7 @@ register_sidebar( array(
 		'after_title' => '</h3><span></span></div>',
 	) );
 
-	
-
-//Header sidebar
-
-	register_sidebar( array(
-
-		'name' => __( 'Top header left area', 'appointment' ),
-
-		'id' => 'home-header-sidebar_left',
-
-		'description' => __('Top header left area', 'appointment' ),
-
-		'before_widget' => '',
-
-		'after_widget' => '',
-
-		'before_title' => '<h3>',
-
-		'after_title' => '</h3>',
-
-	) );
-
-	
-
-	register_sidebar( array(
-
-		'name' => __( 'Top header center area','appointment' ),
-
-		'id' => 'home-header-sidebar_center',
-
-		'description' => __( 'Top header center area', 'appointment' ),
-
-		'before_widget' => '',
-
-		'after_widget' => '',
-
-		'before_title' => '<h3>',
-
-		'after_title' => '</h3>',
-
-	) );
-
-	
-
-	register_sidebar( array(
-
-		'name' => __( 'Top header right area', 'appointment' ),
-
-		'id' => 'home-header-sidebar_right',
-
-		'description' => __( 'Top header right area', 'appointment' ),
-
-		'before_widget' => '',
-
-		'after_widget' => '',
-
-		'before_title' => '<h3>',
-
-		'after_title' => '</h3>',
-
-	) );	
+	 
 
 //orange sidebar 
 	

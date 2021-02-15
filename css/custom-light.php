@@ -768,7 +768,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-booking-steps .wpte-bf-step-wrap .w
     margin: 0px;
     padding: 0px 10px 60px 0px;
     overflow: hidden;
-    text-align: center;
+    text-align: left;
 }
 
 

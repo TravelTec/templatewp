@@ -2,7 +2,7 @@
 
 /**
 
-Template Name: Modelo padrão com coluna
+Template Name: Modelo padrão com coluna na direita
 
 */
 
@@ -14,6 +14,10 @@ get_template_part('index','banner'); ?>
 <style type="text/css">
 	.featured-trip .grid .col{
 		width: 33.33% !important;
+	}
+
+	.sidebar-widget .featured-trip .grid .col{
+		width: 100% !important;
 	}
 	.wpsm_service_b_row{
 		width: 100% !important;

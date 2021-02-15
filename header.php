@@ -16,9 +16,22 @@
 
 	$header_setting = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_options);  
 
-	if($header_setting['upload_image_favicon']!=''){ ?>
+	$exibe_title = get_header_textcolor(); 
 
-	<link rel="shortcut icon" href="<?php  echo $header_setting['upload_image_favicon']; ?>" /> 
+	if ($exibe_title === 'blank') {  }else{ ?>
+		
+		<title><?php echo get_bloginfo( 'name' ); ?> - <?php echo get_bloginfo( 'description' ); ?></title>
+	
+	<?php 
+
+	}
+
+	if($header_setting['upload_image_favicon']!=''){ ?> 
+
+	<link rel="icon" href="<?php  echo $header_setting['upload_image_favicon']; ?>" sizes="32x32" />
+<link rel="icon" href="<?php  echo $header_setting['upload_image_favicon']; ?>" sizes="192x192" />
+<link rel="apple-touch-icon" href="<?php  echo $header_setting['upload_image_favicon']; ?>" />
+<meta name="msapplication-TileImage" content="<?php  echo $header_setting['upload_image_favicon']; ?>" />
 
 	<?php } ?>
 
@@ -134,33 +147,22 @@
 
 		<!-- Brand and toggle get grouped for better mobile display -->
 
-		<div class="navbar-header">
+		<div class="navbar-header"> 
+					<?php $site_description = get_bloginfo( 'description', 'display' );  ?>
 
-				<?php if($header_setting['text_title'] == 1) { ?>
-
+					<?php $exibir_logo = $header_setting['text_title']; ?>
+					<?php $exibir_texto_logo = $header_setting['enable_header_logo_text']; ?>
+ 
 				<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" style="padding: 0">
 
-					<?php
-
-					 if($header_setting['enable_header_logo_text'] == 1) 
-
-					{ echo "<div class=appointment_title_head>" . get_bloginfo( ). "</div>"; }
-
-					elseif($header_setting['upload_image_logo']!='') 
-
-					{ ?>
-
+					<?php if ($exibir_logo == 1 && !empty($header_setting['upload_image_logo'])) { ?>
 					<img class="img-responsive" src="<?php echo $header_setting['upload_image_logo']; ?>" style="height:<?php echo $header_setting['height']; ?>px; width:<?php echo $header_setting['width']; ?>px;"/>
+				<?php } ?> 
+					 	<?php if ($exibir_texto_logo == 1 && $exibir_logo != 1) {  ?>
+					 	<?php echo "<div class=appointment_title_head style=''>" . get_bloginfo( 'name' ). "</div>"; }else if ($exibir_texto_logo == 1 && $exibir_logo == 1) { ?> 
+					 		<?php echo "<div class=appointment_title_head style='font-size:15px'>" . get_bloginfo( 'name' ). "</div>"; } ?> 
 
-					<?php } else { ?>
-
-					<img src="<?php echo WEBRITI_TEMPLATE_DIR_URI; ?>/images/logo.png">
-
-					<?php } ?>
-
-				</a>
-
-				<?php } ?>	
+				</a> 
 
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 
@@ -422,9 +424,10 @@
 
 <div class="clearfix"></div>
 
-<?php $color = get_background_color(); ?> 
+<?php $color = $header_setting['background_color']; ?> 
+<?php $color_page = $header_setting['page_builder_color']; ?>
 
-<?php if($_GET['page_id'] == 11){ ?> 
+<?php if($_GET['page_id'] == 11 || $_SERVER['REQUEST_URI'] == '/checkout/'){ ?> 
 
 	<style type="text/css">
 	.page-builder{
@@ -435,8 +438,11 @@
 	<?php }else{ ?>
 
 <style type="text/css">
+	body{
+		background-color: <?=(empty($color) ? '#ffffff' : $color)?> !important;
+	}
 	.page-builder{
-		background-color: #<?=(empty($color) ? '#ffffff' : $color)?> !important;
+		background-color: <?=(empty($color_page) ? '#ffffff' : $color_page)?> !important;
 	}
 </style>
 <?php } ?> 
@@ -459,5 +465,5 @@
 		.featured-trip .grid .col{
 			width: 100% !important;
 		}
-	}
-</style>
+	} 
+</style> 

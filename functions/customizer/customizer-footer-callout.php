@@ -124,6 +124,6 @@ function appointment_footer_callout_sanitize_html( $input ) {
 
 	}
 
-	add_action( 'customize_register', 'appointment_footer_callout_customizer' );
+	//add_action( 'customize_register', 'appointment_footer_callout_customizer' );
 
 	?>

@@ -18,7 +18,7 @@ public $type = 'new_menu';
 
 	   {
 
-	   echo '<h3>Predefined Colors</h3>';
+	   echo '<h3>Cores pré-definidas</h3>';
 
 		  $name = '_customize-color-radio-' . $this->id; 
 
@@ -183,60 +183,7 @@ public $type = 'new_menu';
 		'choices' => array('wide'=>'wide', 'boxed'=>'boxed'),
 
 	));	
-
-
-
-
-
-	$wp_customize->add_setting(
-
-	'appointment_options[back_image]', array(
-
-	'default' => 'bg-img0.png',  
-
-	'capability'     => 'edit_theme_options',
-
-	'sanitize_callback' => 'sanitize_text_field',
-
-	'type' => 'option',
-
-    ));
-
-	$wp_customize->add_control(new WP_back_Customize_Control($wp_customize,'appointment_options[back_image]',
-
-	array(
-
-        'label'   => __('Predefined default backgrounds', 'appointment'),
-
-        'section' => 'theme_style',
-
-		'priority'   => 160,
-
-		'type' => 'radio',
-
-		'choices' => array(
-
-			'bg-img0.png' => 'Pattern 0',
-
-            'bg_img1.png' => 'Pattern 1',
-
-            'bg_img2.png' => 'Pattern 2',
-
-            'bg_img3.png' => 'Pattern 3',
-
-			'bg_img4.png' => 'Pattern 4',
-
-			'bg_img5.png' => 'Pattern 5',
-
-			'bg_img6.png' => 'Pattern 6',
-
-    )
-
-	
-
-	)));
-
-	
+ 
 
 	
 
@@ -379,6 +326,37 @@ public $type = 'new_menu';
 	) ) );
 
 	
+	$wp_customize->add_setting(
+
+	'appointment_options[background_color]', array(
+
+	'capability'     => 'edit_theme_options',
+
+	'default' => '#ee591f',
+
+	'type' => 'option',
+
+    ));
+
+	
+
+	$wp_customize->add_control( 
+
+	new WP_Customize_Color_Control( 
+
+	$wp_customize, 
+
+	'appointment_options[background_color]', 
+
+	array(
+
+		'label'      => __( 'Cor de fundo', 'appointment' ),
+
+		'section'    => 'theme_style',
+
+		'settings'   => 'appointment_options[background_color]',
+
+	) ) );
 
 	
 

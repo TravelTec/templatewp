@@ -1,78 +1,149 @@
 <?php
 
+/**
 
+Template Name: Modelo padrão com coluna na esquerda
+
+*/
 
 get_header();
 
-get_template_part('index','banner');
-
-?>
-
-<div class="clearfix"></div>
+get_template_part('index','banner'); ?>
 
 <!-- Blog Section with Sidebar -->
+<style type="text/css">
+	.featured-trip .grid .col{
+		width: 33.33% !important;
+	}
+
+	.sidebar-widget .featured-trip .grid .col{
+		width: 100% !important;
+	}
+	.wpsm_service_b_row{
+		width: 100% !important;
+	}
+	@media (max-width: 767px){
+	.featured-trip .grid .col{
+		width: 100% !important;
+	}
+}
+</style>
 
 <div class="page-builder">
 
 	<div class="container">
 
-		<div class="row">
+		<div class="row">	
 
 			<!--Sidebar Area-->
 
 			<div class="col-md-4">
 
-				<?php get_sidebar(); ?>
+				<?php 
+
+				if ( class_exists( 'WooCommerce' ) ) {
+
+					
+
+					if( is_account_page() || is_cart() || is_checkout() ) {
+
+							get_sidebar('woocommerce'); 
+
+					}
+
+					else{ 
+
+				
+
+					get_sidebar(); 
+
+					
+
+					}
+
+					
+
+				}
+
+				else{ 
+
+				
+
+					get_sidebar(); 
+
+					
+
+					} ?>
 
 			</div>
 
-			<!--Sidebar Area-->			
+			<!--Sidebar Area-->
 
 			<!-- Blog Area -->
 
-			<div class="<?php appointment_post_layout_class(); ?>" >
+			<?php 
 
-					<?php
-
-					$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-
-					$args = array( 'post_type' => 'post','paged'=>$paged);	
-
-					$post_type_data = new WP_Query( $args );
+				if ( class_exists( 'WooCommerce' ) ) {
 
 					
 
-					while($post_type_data->have_posts()){
+					if( is_account_page() || is_cart() || is_checkout() ) {
 
-						
+							echo '<div class="col-md-'.( !is_active_sidebar( "woocommerce" ) ?"12" :"8" ).'">'; 
 
-						$post_type_data->the_post();
+					}
+
+					else{ 
+
+				
+
+					echo '<div class="col-md-'.( !is_active_sidebar( "sidebar-primary" ) ?"12" :"8" ).'">'; 
 
 					
 
-						get_template_part( 'content' , get_post_format() );
+					}
 
 					
 
-					} 
+				}
 
-					?>		
+				else{ 
 
-				<!-- Blog Pagination -->
+				
 
-				<?php 				
+					echo '<div class="col-md-'.( !is_active_sidebar( "sidebar-primary" ) ?"12" :"8" ).'">';
 
-					$Webriti_pagination = new Webriti_pagination();
+					
 
-					$Webriti_pagination->Webriti_page($paged, $post_type_data); 
+					} ?>
 
-				?>
+			
 
-				<!-- /Blog Pagination -->
+			
+
+			
+
+			<?php if( $post->post_content != "" )
+
+			{ ?>
+
+			<div class="blog-lg-area-left">
+
+			<?php if( have_posts()) :  the_post(); ?>		
+
+			<?php the_content(); ?>
+
+				<?php endif; ?>
 
 			</div>
 
-			<!-- /Blog Area -->			
+			<?php } ?>
+
+				<?php comments_template( '', true ); // show comments ?>
+
+			</div>
+
+			<!-- /Blog Area -->		
 
 		</div>
 
@@ -81,7 +152,5 @@ get_template_part('index','banner');
 </div>
 
 <!-- /Blog Section with Sidebar -->
-
-<div class="clearfix"></div>
 
 <?php get_footer(); ?>

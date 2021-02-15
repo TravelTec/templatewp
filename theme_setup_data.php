@@ -10,9 +10,7 @@ function theme_setup_data()
 
 	'layout_selector' => 'wide',
 
-	'back_image'=>'bg_img0.png',
-
-	'upload_image_favicon' => '',
+	'back_image'=>'bg_img0.png', 
 
 	'header_one_name' => '' ,
 

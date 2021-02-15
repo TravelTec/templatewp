@@ -75,7 +75,7 @@ add_action( 'admin_init', 'my_theme_update_checker_setting' );
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/meta-box/post-meta.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/taxonomies/taxonomies.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/pagination/webriti_pagination.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-callout.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-callout.php'); 
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-client.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-service.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-slider.php');
@@ -125,10 +125,10 @@ add_action( 'admin_init', 'my_theme_update_checker_setting' );
 	// Set the content_width with 900
 	
 	//Add Theme Support Title Tag
-	add_theme_support( 'title-tag' );
+	//add_theme_support( 'title-tag' );
 	
 	//Custom Background
-	add_theme_support( 'custom-background' );
+	//add_theme_support( 'custom-background' );
 	
 	// woocommerce support
 	
@@ -255,6 +255,55 @@ function appointment_blog_exclude_category( $query ) {
 	
 }
 add_action( 'pre_get_posts', 'appointment_blog_exclude_category' );
+
+function my_customize_register() {     
+  global $wp_customize;
+  $wp_customize->remove_section( 'custom_css' );  //Modify this line as needed  
+  $wp_customize->remove_section( 'colors' );  //Modify this line as needed  
+  $wp_customize->remove_section( 'header_image' );  //Modify this line as needed
+  $wp_customize->remove_setting( 'site_icon' );  //Modify this line as needed   
+}
+
+add_action( 'customize_register', 'my_customize_register', 11 );
+
+/*
+ * Add in our custom Accent Color setting and control to be used in the Customizer in the Colors section
+ *
+ */
+function color_page_builder( $wp_customize ) { 
+
+	$wp_customize->add_setting(
+
+	'appointment_options[page_builder_color]', array(
+
+        'capability'     => 'edit_theme_options',
+
+	'default' => '#ffffff',
+
+	'type' => 'option',
+
+    ));
+
+    $wp_customize->add_control( 
+
+	new WP_Customize_Color_Control( 
+
+	$wp_customize, 
+
+	'appointment_options[page_builder_color]', 
+
+	array(
+
+        'label'   => __('Selecionar cor de fundo para todas as páginas', 'appointment'),
+
+        'section' => 'static_front_page',
+
+        'settings'   => 'appointment_options[page_builder_color]',
+
+    ))); 
+
+}
+add_action('customize_register','color_page_builder');
 	
 function appointment_exclude_widget_categories($args){
 	$appointment_options=theme_setup_data();

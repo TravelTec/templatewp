@@ -41,7 +41,7 @@ function appointment_scripts()
         wp_enqueue_style('appointment-font-css',WEBRITI_TEMPLATE_DIR_URI.'/css/font/font.css');
 
 		/* Font Awesome */
-
+		
         wp_enqueue_style('appointment-font-awesome-css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css');
 
 		wp_enqueue_style('appointment-lightbox-css',WEBRITI_TEMPLATE_DIR_URI.'/css/lightbox.css');

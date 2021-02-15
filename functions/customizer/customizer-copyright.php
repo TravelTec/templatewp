@@ -10,7 +10,7 @@
 
 		'capability'     => 'edit_theme_options',
 
-		'title'      => __('Footer copyright settings', 'appointment'),
+		'title'      => __('Configuração do rodapé', 'appointment'),
 
 	) );
 
@@ -22,7 +22,7 @@
 
         array(
 
-            'title' => __('Footer copyright settings','appointment'),
+            'title' => __('Nota sobre direitos autorais','appointment'),
 
             'priority' => 35,
 
@@ -98,6 +98,52 @@ $wp_customize->add_control(
 
 );
 
+$wp_customize->add_section(
+
+        'footer_color',
+
+        array(
+
+            'title' => __('Cor de fundo do rodapé','appointment'),
+
+           'priority' => 10,
+
+            'panel' => 'appointment_copyright_setting',
+
+        )
+
+    );
+
+
+$wp_customize->add_setting(
+
+    'appointment_options[footer_skin_color]', array(
+
+        'capability'     => 'edit_theme_options',
+
+    'default' => '#ffffff',
+
+    'type' => 'option',
+
+    ));
+
+    $wp_customize->add_control( 
+
+    new WP_Customize_Color_Control( 
+
+    $wp_customize, 
+
+    'appointment_options[footer_skin_color]', 
+
+    array(
+
+        'label'   => __('Selecione a cor', 'appointment'),
+
+        'section' => 'footer_color',
+
+        'settings'   => 'appointment_options[footer_skin_color]',
+
+    ))); 
 
 
 	//Footer social link 

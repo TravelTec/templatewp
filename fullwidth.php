@@ -29,6 +29,18 @@ get_header(); ?>
 		padding: 0;
 	}
 }
+	.has-text-align-left, .has-text-align-right, .has-text-align-center, .has-text-align-justify{
+		margin: 0 40px 20px !important;
+	}
+	.blog-lg-area-left{
+		text-align: left !important;
+	}
+	p, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .wp-block-buttons, .wp-block-image	{
+		margin: 0 40px 20px !important;
+	}
+	p.has-background{
+		margin: 0 !important;
+	}
 </style>
 
 <div class="page-builder"> 
@@ -45,7 +57,7 @@ get_header(); ?>
 
 			{ ?>
 
-			<div class="blog-lg-area-left">
+			<div class="blog-lg-area-left" style="padding: 0">
 
 			<?php if( have_posts()) :  the_post(); ?>		
 

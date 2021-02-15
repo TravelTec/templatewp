@@ -10,11 +10,11 @@ function appointment_callout_customizer( $wp_customize ) {
 
 	$wp_customize->add_panel( 'appointment_homecallout_setting', array(
 
-		'priority'       => 700,
+		'priority'       => 10,
 
 		'capability'     => 'edit_theme_options',
 
-		'title'      => __('Contact callout settings', 'appointment'),
+		'title'      => __('Identidade do site 2', 'appointment'),
 
 	) );
 

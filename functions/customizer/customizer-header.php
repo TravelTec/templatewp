@@ -18,71 +18,7 @@ $wp_customize->remove_control('header_textcolor');
 
 	) );
 
-	
-
-   	$wp_customize->add_section( 'header_image' , array(
-
-		'title'      => __('Custom header settings', 'appointment'),
-
-		'panel'  => 'header_options',
-
-		'priority'   => 200,
-
-   	) );
-
-	$wp_customize->add_setting(
-
-	'appointment_options[header_one_name]', array(
-
-        'default'        => '',
-
-        'capability'     => 'edit_theme_options',
-
-		'sanitize_callback' => 'sanitize_text_field',
-
-		'type' => 'option',
-
-    ));
-
-    $wp_customize->add_control('appointment_options[header_one_name]', array(
-
-        'label'   => __('Header Headline', 'appointment'),
-
-        'section' => 'header_image',
-
-        'type'    => 'text',
-
-		'priority'   => 140,
-
-    ));
-
-	$wp_customize->add_setting('appointment_options[header_one_text]'
-
-		, array(
-
-        'default'        => '',
-
-        'capability'     => 'edit_theme_options',
-
-		'sanitize_callback' => 'sanitize_text_field',
-
-		'type' => 'option',
-
-    ));
-
-    $wp_customize->add_control( 'appointment_options[header_one_text]', array(
-
-        'label'   => __('Header Text', 'appointment'),
-
-        'section' => 'header_image',
-
-        'type'    => 'text',
-
-		'priority'   => 140,
-
-    ));
-
-	
+	 
 
 	//Header logo setting
 
@@ -969,47 +905,7 @@ $wp_customize->remove_control('header_textcolor');
 
 
 
-
-
-	//Custom css
-
-	$wp_customize->add_section( 'custom_css' , array(
-
-		'title'      => __('Custom CSS', 'appointment'),
-
-		'panel'  => 'header_options',
-
-		'priority'   => 100,
-
-   	) );
-
-	$wp_customize->add_setting(
-
-	'appointment_options[webrit_custom_css]'
-
-		, array(
-
-        'default'        => '',
-
-        'capability'     => 'edit_theme_options',
-
-		'sanitize_callback' => 'sanitize_text_field',
-
-		'type'=> 'option',
-
-    ));
-
-    $wp_customize->add_control( 'appointment_options[webrit_custom_css]', array(
-
-        'label'   => __('Custom CSS', 'appointment'),
-
-        'section' => 'custom_css',
-
-        'type' => 'textarea',
-
-		'priority'   => 100,
-
-    ));	
+ 
 
 	}
 
