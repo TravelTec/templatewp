@@ -14,7 +14,7 @@ $wp_customize->remove_control('header_textcolor');
 
 		'capability'     => 'edit_theme_options',
 
-		'title'      => __('Header settings teste', 'appointment'),
+		'title'      => __('Header settings', 'appointment'),
 
 	) );
 

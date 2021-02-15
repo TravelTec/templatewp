@@ -104,7 +104,7 @@ $wp_customize->add_section(
 
         array(
 
-            'title' => __('Cor de fundo do rodapé','appointment'),
+            'title' => __('Cores','appointment'),
 
            'priority' => 10,
 
@@ -137,11 +137,42 @@ $wp_customize->add_setting(
 
     array(
 
-        'label'   => __('Selecione a cor', 'appointment'),
+        'label'   => __('Selecione a cor de fundo', 'appointment'),
 
         'section' => 'footer_color',
 
         'settings'   => 'appointment_options[footer_skin_color]',
+
+    ))); 
+
+
+$wp_customize->add_setting(
+
+    'appointment_options[footer_text_color]', array(
+
+        'capability'     => 'edit_theme_options',
+
+    'default' => '#ffffff',
+
+    'type' => 'option',
+
+    ));
+
+    $wp_customize->add_control( 
+
+    new WP_Customize_Color_Control( 
+
+    $wp_customize, 
+
+    'appointment_options[footer_text_color]', 
+
+    array(
+
+        'label'   => __('Selecione a cor do texto', 'appointment'),
+
+        'section' => 'footer_color',
+
+        'settings'   => 'appointment_options[footer_text_color]',
 
     ))); 
 
