@@ -1,69 +1,91 @@
-<?php 
+<?php
 
-get_header();
+/**
 
-get_template_part('index','banner');
+Template Name: Modelo blog largura total
 
-$appointment_options=theme_setup_data();
+*/
 
-$blog_masonry_column = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_options );
+get_header(); ?>
 
-?>
+<!-- Blog Section with Sidebar -->
 
-<!-- Page Seperator --><div class="page-seperator"></div><!-- /Page Seperator -->
+<style type="text/css">
+	.page-title-section{
+		display: none !important;
+	}
+	.page-builder { margin: 0px; padding: 0; }
+	.featured-trip .grid .col{
+		width: 33.33% !important;
+	}
+	.featured-trip{
+		padding: 0 90px;
+	}
+	@media (max-width: 767px){
+	.featured-trip .grid .col{
+		width: 100% !important;
+	} 
+	.featured-trip{
+		padding: 0;
+	}
+}
+	.has-text-align-left, .has-text-align-right, .has-text-align-center, .has-text-align-justify{
+		margin: 0 40px 20px !important;
+	}
+	.blog-lg-area-left{
+		text-align: left !important;
+	}
+	p, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .wp-block-buttons, .wp-block-image	{
+		margin: 0 40px 20px !important;
+	}
+	p.has-background{
+		margin: 0 !important;
+	}
+</style>
 
-<div class="clearfix"></div>
+<div class="page-builder"> 
 
-<!-- Blog Masonry Section -->
+	<div class="container-fluid"> 
 
-<section class="blog-section-lg">
+		<div class="row">
 
-	<div class="container">
+			<!-- Blog Area -->
 
-		<div class="row masonry-<?php echo $blog_masonry_column['blog_masonry_column_layout'];?>">
+			<div class="col-md-12" style="padding: 0">
 
-			<?php
+			<?php if( $post->post_content != "" )
 
-			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+			{ ?>
 
-			$args = array( 'post_type' => 'post','paged'=>$paged);	
+			<div class="blog-lg-area-left" style="padding: 0">
 
-			$post_type_data = new WP_Query( $args );
+			<?php if( have_posts()) :  the_post(); ?>		
 
-			while($post_type_data->have_posts()){
+			<?php the_content(); ?>
 
-			$post_type_data->the_post();
-
-			?>
-
-			<div class="masonry-item">
-
-				<?php get_template_part( 'content',get_post_format() ); ?>
+				<?php endif; ?>
 
 			</div>
 
-		<?php } ?>
+			<?php } ?>			
+
+				<?php comments_template( '', true ); // show comments ?>
+
+			</div>
+
+			<!-- /Blog Area -->
 
 		</div>
 
-		</div>	
-
-		<!-- Blog Pagination -->
-
-				<?php 				
-
-				$Webriti_pagination = new Webriti_pagination();
-
-				$Webriti_pagination->Webriti_page($paged, $post_type_data); ?>
-
-		<!-- /Blog Pagination -->					
-
 	</div>
 
-</section>
+</div>
 
-<!-- /Blog Masonry Section -->
+<script type="text/javascript">
+	jQuery(".wpsm_service_b_row").addClass('container');
+	jQuery(".wpsm_row").addClass('row');
+</script>
 
-<div class="clearfix"></div>
+<!-- /Blog Section with Sidebar -->
 
 <?php get_footer(); ?>

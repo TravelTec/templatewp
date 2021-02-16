@@ -12,7 +12,7 @@ function custom_light() {
 	if ( $link_color != '#ff0000' ) :
 	?>
 <style type="text/css">
-iframe{
+.trip-post-content iframe{
 	width: 762px !important;
 } 
 .slide-btn-sm, .slide-btn-sm{

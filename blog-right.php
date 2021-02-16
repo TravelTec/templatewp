@@ -2,7 +2,7 @@
 
 /**
 
-Template Name: Modelo blog com coluna na esquerda
+Template Name: Modelo blog com coluna na direita
 
 */
 
@@ -33,51 +33,7 @@ get_template_part('index','banner'); ?>
 
 	<div class="container">
 
-		<div class="row">	
-
-			<!--Sidebar Area-->
-
-			<div class="col-md-4">
-
-				<?php 
-
-				if ( class_exists( 'WooCommerce' ) ) {
-
-					
-
-					if( is_account_page() || is_cart() || is_checkout() ) {
-
-							get_sidebar('woocommerce'); 
-
-					}
-
-					else{ 
-
-				
-
-					get_sidebar(); 
-
-					
-
-					}
-
-					
-
-				}
-
-				else{ 
-
-				
-
-					get_sidebar(); 
-
-					
-
-					} ?>
-
-			</div>
-
-			<!--Sidebar Area-->
+		<div class="row">
 
 			<!-- Blog Area -->
 
@@ -143,7 +99,51 @@ get_template_part('index','banner'); ?>
 
 			</div>
 
-			<!-- /Blog Area -->		
+			<!-- /Blog Area -->			
+
+			<!--Sidebar Area-->
+
+			<div class="col-md-4">
+
+				<?php 
+
+				if ( class_exists( 'WooCommerce' ) ) {
+
+					
+
+					if( is_account_page() || is_cart() || is_checkout() ) {
+
+							get_sidebar('woocommerce'); 
+
+					}
+
+					else{ 
+
+				
+
+					get_sidebar(); 
+
+					
+
+					}
+
+					
+
+				}
+
+				else{ 
+
+				
+
+					get_sidebar(); 
+
+					
+
+					} ?>
+
+			</div>
+
+			<!--Sidebar Area-->
 
 		</div>
 
