@@ -1,19 +1,10 @@
-<?php
-
-/**
-
-Template Name: Modelo blog largura total
-
-*/
+<?php 
 
 get_header(); ?>
 
 <!-- Blog Section with Sidebar -->
 
-<style type="text/css">
-	.page-title-section{
-		display: none !important;
-	}
+<style type="text/css"> 
 	.page-builder { margin: 0px; padding: 0; }
 	.featured-trip .grid .col{
 		width: 33.33% !important;
@@ -53,9 +44,6 @@ get_header(); ?>
 
 			<div class="col-md-12" style="padding: 0">
 
-			<?php if( $post->post_content != "" )
-
-			{ ?>
 
 			<div class="blog-lg-area-left" style="padding: 0">
 
@@ -66,8 +54,7 @@ get_header(); ?>
 				<?php endif; ?>
 
 			</div>
-
-			<?php } ?>			
+		
 
 				<?php comments_template( '', true ); // show comments ?>
 

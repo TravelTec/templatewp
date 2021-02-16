@@ -60,10 +60,31 @@ get_template_part('index','banner');
 		<div class="container">
 		<?php } ?>
 
-		<div class="row justify-content-center">
+		<?php if( $post->post_content != "" )
+			{ ?>
+		<div class="row justify-content-center"> 
+			<!-- Blog Area -->
+			<div class="<?php appointment_post_layout_class(); ?>" >
+			
+			<div class="blog-lg-area-left">
+			<?php if( have_posts()) :  the_post();
+			the_content(); 
+			endif; ?>
+			</div>
+			
+			</div>
+			<!-- /Blog Area -->			
+			<!--Sidebar Area-->
+			<div class="col-md-4">
+				<?php get_sidebar(); ?>
+			</div>
+			<!--Sidebar Area-->
+		</div>
+		<?php comments_template( '', true ); }else{  // show comments ?>
 
 		 <!-- Blog Area -->
-
+		<div class="row justify-content-center"> 
+			
 			<div class="col-md-12">
 
 				<?php the_content(); ?>
