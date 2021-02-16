@@ -6,6 +6,8 @@ get_header();
 
 get_template_part('index','banner');
 
+$the_query = new WP_Query ( array( 'post_type'=>'post' ) );
+
 ?>
 
 <style type="text/css">
@@ -52,40 +54,105 @@ get_template_part('index','banner');
 
 <!-- Blog Section with Sidebar -->
 
-<div class="page-builder">
+<div class="page-builder"> 
 
+		<?php if ( $the_query->have_posts() ) { ?>
+	<div class="container">
+
+		<div class="row"> 
+
+			<!-- Blog Area -->
+
+			<div class="col-md-8" >
+
+			<?php 
+
+		while ( $the_query->have_posts() ) { 
+
+			$the_query->the_post();  ?> 
+			<div class="media">						
+
+			<?php
+
+			
+
+			 if(!is_home() && !is_page_template('blog-masonry.php'))
+
+			{
+
+			appointment_aside_meta_content(); 
+
+			}
+
+			elseif(is_home())
+
+			{
+
+			appointment_aside_meta_content(); 
+
+			}
+
+			
+
+			?>
+
+		<div class="media-body">
+
+				<?php // Check Image size for fullwidth template
+
+				 appointment_post_thumbnail('','img-responsive'); 
+				?>
+
+				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+
+		        <?php  
+
+                // call editor content of post/page	
+
+				the_content( __( 'Read More' , 'appointment' ) );
+
+				wp_link_pages( );
+
+		       ?>
+
+		</div>
+
+	</div>
+	<br><br>
+
+			<?php } ?> 
+
+			</div>
+
+			<!-- /Blog Area -->			
+
+			
+
+			<!--Sidebar Area-->
+
+			<div class="col-md-4">
+
+			<?php get_sidebar(); ?>	
+
+			</div>
+
+			<!--Sidebar Area-->
+
+		</div>
+
+	</div>
+		<?php }else{  // show comments ?>
 	<?php if ($_SERVER['REQUEST_URI'] == '/checkout/') { ?>
 		<div class="container-fluid">
 	<?php }else{ ?>
 		<div class="container">
 		<?php } ?>
 
-		<?php if( $post->post_content != "" )
-			{ ?>
-		<div class="row justify-content-center"> 
-			<!-- Blog Area -->
-			<div class="<?php appointment_post_layout_class(); ?>" >
-			
-			<div class="blog-lg-area-left">
-			<?php if( have_posts()) :  the_post();
-			the_content(); 
-			endif; ?>
-			</div>
-			
-			</div>
-			<!-- /Blog Area -->			
-			<!--Sidebar Area-->
-			<div class="col-md-4">
-				<?php get_sidebar(); ?>
-			</div>
-			<!--Sidebar Area-->
-		</div>
-		<?php comments_template( '', true ); }else{  // show comments ?>
+		<div class="row">
 
-		 <!-- Blog Area -->
-		<div class="row justify-content-center"> 
-			
-			<div class="col-md-12">
+			<!-- Blog Area -->
+
+			<div class="col-md-12" style="padding: 0">
 
 				<?php the_content(); ?>
 
@@ -96,6 +163,8 @@ get_template_part('index','banner');
 			<!-- /Blog Area --> 
 
 		</div>
+	<?php } ?>
+
 
 	</div>
 
