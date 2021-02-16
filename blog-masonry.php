@@ -1,6 +1,17 @@
-<?php 
+<?php
 
-get_header(); ?>
+/**
+
+Template Name: Modelo blog largura total
+
+*/
+
+get_header(); 
+
+get_template_part('index','banner');
+
+$the_query = new WP_Query ( array( 'post_type'=>'post' ) );
+?>
 
 <!-- Blog Section with Sidebar -->
 
@@ -20,22 +31,89 @@ get_header(); ?>
 		padding: 0;
 	}
 }
-	.has-text-align-left, .has-text-align-right, .has-text-align-center, .has-text-align-justify{
-		margin: 0 40px 20px !important;
-	}
-	.blog-lg-area-left{
-		text-align: left !important;
-	}
-	p, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .wp-block-buttons, .wp-block-image	{
-		margin: 0 40px 20px !important;
-	}
-	p.has-background{
-		margin: 0 !important;
-	}
 </style>
+
+<div class="clearfix"></div>
+
+<br><br><br><br>
 
 <div class="page-builder"> 
 
+<?php if ( $the_query->have_posts() ) { ?>
+	<div class="container">
+
+		<div class="row"> 
+
+			<!-- Blog Area -->
+
+			<div class="col-md-12" >
+
+			<?php 
+
+		while ( $the_query->have_posts() ) { 
+
+			$the_query->the_post();  ?> 
+			<div class="media">						
+
+			<?php
+
+			
+
+			 if(!is_home() && !is_page_template('blog-masonry.php'))
+
+			{
+
+			appointment_aside_meta_content(); 
+
+			}
+
+			elseif(is_home())
+
+			{
+
+			appointment_aside_meta_content(); 
+
+			}
+
+			
+
+			?>
+
+		<div class="media-body">
+
+				<?php // Check Image size for fullwidth template
+
+				 appointment_post_thumbnail('','img-responsive'); 
+				?>
+
+				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+
+		        <?php  
+
+                // call editor content of post/page	
+
+				the_content( __( 'Read More' , 'appointment' ) );
+
+				wp_link_pages( );
+
+		       ?>
+
+		</div>
+
+	</div>
+	<br><br>
+
+			<?php } ?> 
+
+			</div>
+
+			<!-- /Blog Area -->			
+ 
+
+		</div>
+
+	</div>
+		<?php }else{  // show comments ?>
 	<div class="container-fluid"> 
 
 		<div class="row">
@@ -44,26 +122,16 @@ get_header(); ?>
 
 			<div class="col-md-12" style="padding: 0">
 
+				<?php the_content(); ?>
 
-			<div class="blog-lg-area-left" style="padding: 0">
-
-			<?php if( have_posts()) :  the_post(); ?>		
-
-			<?php the_content(); ?>
-
-				<?php endif; ?>
-
-			</div>
-		
-
-				<?php comments_template( '', true ); // show comments ?>
+				<!-- /Blog Pagination -->
 
 			</div>
 
-			<!-- /Blog Area -->
+			<!-- /Blog Area --> 
 
 		</div>
-
+	<?php } ?>
 	</div>
 
 </div>

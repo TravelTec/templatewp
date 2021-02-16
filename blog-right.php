@@ -1,139 +1,121 @@
-<?php 
+<?php
 
-get_header();
+/**
 
-get_template_part('index','banner'); ?>
+Template Name: Modelo blog com coluna na direita
+
+*/
+
+get_header(); 
+
+get_template_part('index','banner');
+
+$the_query = new WP_Query ( array( 'post_type'=>'post' ) );
+?>
 
 <!-- Blog Section with Sidebar -->
-<style type="text/css">
+
+<style type="text/css"> 
+	.page-builder { margin: 0px; padding: 0; }
 	.featured-trip .grid .col{
 		width: 33.33% !important;
 	}
-
-	.sidebar-widget .featured-trip .grid .col{
-		width: 100% !important;
-	}
-	.wpsm_service_b_row{
-		width: 100% !important;
+	.featured-trip{
+		padding: 0 90px;
 	}
 	@media (max-width: 767px){
 	.featured-trip .grid .col{
 		width: 100% !important;
+	} 
+	.featured-trip{
+		padding: 0;
 	}
 }
 </style>
 
-<div class="page-builder">
+<div class="clearfix"></div>
 
+<br><br><br><br>
+
+<div class="page-builder"> 
+
+<?php if ( $the_query->have_posts() ) { ?>
 	<div class="container">
 
-		<div class="row">
+		<div class="row"> 
 
 			<!-- Blog Area -->
 
+			<div class="col-md-8" >
+
 			<?php 
 
-				if ( class_exists( 'WooCommerce' ) ) {
+		while ( $the_query->have_posts() ) { 
 
-					
+			$the_query->the_post();  ?> 
+			<div class="media">						
 
-					if( is_account_page() || is_cart() || is_checkout() ) {
-
-							echo '<div class="col-md-'.( !is_active_sidebar( "woocommerce" ) ?"12" :"8" ).'">'; 
-
-					}
-
-					else{ 
-
-				
-
-					echo '<div class="col-md-'.( !is_active_sidebar( "sidebar-primary" ) ?"12" :"8" ).'">'; 
-
-					
-
-					}
-
-					
-
-				}
-
-				else{ 
-
-				
-
-					echo '<div class="col-md-'.( !is_active_sidebar( "sidebar-primary" ) ?"12" :"8" ).'">';
-
-					
-
-					} ?>
+			<?php
 
 			
 
-			
+			 if(!is_home() && !is_page_template('blog-masonry.php'))
+
+			{
+
+			appointment_aside_meta_content(); 
+
+			}
+
+			elseif(is_home())
+
+			{
+
+			appointment_aside_meta_content(); 
+
+			}
 
 			
 
-			<?php if( $post->post_content != "" )
+			?>
 
-			{ ?>
+		<div class="media-body">
 
-			<div class="blog-lg-area-left">
+				<?php // Check Image size for fullwidth template
 
-			<?php if( have_posts()) :  the_post(); ?>		
+				 appointment_post_thumbnail('','img-responsive'); 
+				?>
 
-			<?php the_content(); ?>
+				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
-				<?php endif; ?>
+		        <?php  
 
-			</div>
+                // call editor content of post/page	
 
-			<?php } ?>
+				the_content( __( 'Read More' , 'appointment' ) );
 
-				<?php comments_template( '', true ); // show comments ?>
+				wp_link_pages( );
+
+		       ?>
+
+		</div>
+
+	</div>
+	<br><br>
+
+			<?php } ?> 
 
 			</div>
 
 			<!-- /Blog Area -->			
 
+			
+
 			<!--Sidebar Area-->
 
 			<div class="col-md-4">
 
-				<?php 
-
-				if ( class_exists( 'WooCommerce' ) ) {
-
-					
-
-					if( is_account_page() || is_cart() || is_checkout() ) {
-
-							get_sidebar('woocommerce'); 
-
-					}
-
-					else{ 
-
-				
-
-					get_sidebar(); 
-
-					
-
-					}
-
-					
-
-				}
-
-				else{ 
-
-				
-
-					get_sidebar(); 
-
-					
-
-					} ?>
+			<?php get_sidebar(); ?>	
 
 			</div>
 
@@ -142,8 +124,33 @@ get_template_part('index','banner'); ?>
 		</div>
 
 	</div>
+		<?php }else{  // show comments ?>
+	<div class="container-fluid"> 
+
+		<div class="row">
+
+			<!-- Blog Area -->
+
+			<div class="col-md-12" style="padding: 0">
+
+				<?php the_content(); ?>
+
+				<!-- /Blog Pagination -->
+
+			</div>
+
+			<!-- /Blog Area --> 
+
+		</div>
+	<?php } ?>
+	</div>
 
 </div>
+
+<script type="text/javascript">
+	jQuery(".wpsm_service_b_row").addClass('container');
+	jQuery(".wpsm_row").addClass('row');
+</script>
 
 <!-- /Blog Section with Sidebar -->
 
