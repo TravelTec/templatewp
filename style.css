@@ -1325,6 +1325,12 @@ a.project-next:before {
 .carousel-control.left,  .carousel-control.right {margin-left:15px;background-image:none;}
 
 @media (max-width: 767px) {
+    .ocultarExibicao{
+        display: none !important;
+    }
+    .multi-item-close{
+        margin-top: -38px !important;
+    }
 
 	.carousel-inner .active.left { left: -100%; }
 
@@ -6233,9 +6239,25 @@ li.cat-item { padding: 5px 20px; }
 }
 .footer-sidebar li:before {
     position: absolute; 
-    left: 13px; 
+    left: 0px; 
     color: #ddd !important;
         font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f00c";
 }
+.datepicker--content{
+    display: block !important;
+}
+.datepicker--days-names{
+    display: -webkit-flex !important;
+}
+.datepicker--cells{
+    display: -webkit-flex !important;
+}
+
+.sidebar-widget .largura-motor{
+    width: 100%;
+} 
+.sidebar-widget .seta{
+    display: none !important;
+} 

@@ -22,6 +22,40 @@ function custom_light() {
     background-color: #<?php echo $link_color; ?> !important;
 }
 
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    background-color: #<?php echo $link_color; ?> !important;
+}
+.default-bg{
+    background-color: #<?php echo $link_color; ?> !important;
+}
+.default-bg-rgba{
+    background-color: rgba(<?=$r?>, <?=$g?>, <?=$b?>, 0.7) !important;
+}
+.default{
+    color: #<?php echo $link_color; ?> !important;
+}
+.default-button{
+    background-color: #<?php echo $link_color; ?> !important;
+    color: #ffffff !important;
+    border: 1px solid #<?php echo $link_color; ?> !important;
+}
+.default-button:hover{
+    background-color: #fff !important;
+    color: #<?php echo $link_color; ?> !important;
+    border: 1px solid #<?php echo $link_color; ?> !important;
+}
+.listDropdown .li_dados {
+    font-size: 13.5px;
+    border-bottom: 1px solid #545454;
+    padding: 5px 5px 10px 5px;
+    color: #<?php echo $link_color; ?>;
+    cursor: pointer;
+    transition: .3s;
+}
+.listDropdown .li_dados:hover {
+    background-color: #<?php echo $link_color; ?>;
+    color: white;
+}
 .featured-trip .grid-latest .text-holder .meta-info svg, .our-deals .grid-latest .text-holder .meta-info svg{
         fill: #<?php echo $link_color; ?>;
 }
