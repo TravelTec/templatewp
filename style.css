@@ -1331,6 +1331,9 @@ a.project-next:before {
     .multi-item-close{
         margin-top: -38px !important;
     }
+    .trip-content-area{
+            padding: 10px !important;
+    }
 
 	.carousel-inner .active.left { left: -100%; }
 

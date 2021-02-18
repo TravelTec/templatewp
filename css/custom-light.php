@@ -13,7 +13,7 @@ function custom_light() {
 	?>
 <style type="text/css">
 .trip-post-content iframe{
-	width: 762px !important;
+	width: 100% !important;
 } 
 .slide-btn-sm, .slide-btn-sm{
     background-color: #<?php echo $link_color; ?> !important;
