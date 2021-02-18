@@ -23,6 +23,9 @@ $the_query = new WP_Query ( array( 'post_type'=>'post' ) );
 	.featured-trip{
 		padding: 0 90px;
 	}
+	.blog-post-date-area{
+		float: right !important;
+	}
 	@media (max-width: 767px){
 	.featured-trip .grid .col{
 		width: 100% !important;
