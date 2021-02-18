@@ -32,12 +32,13 @@ $the_query = new WP_Query ( array( 'post_type'=>'post' ) );
 	}
 }
 </style>
+ 
+
+<div class="page-builder"> 
 
 <div class="clearfix"></div>
 
-<br><br><br><br>
-
-<div class="page-builder"> 
+<br><br><br>
 
 <?php if ( $the_query->have_posts() ) { ?>
 	<div class="container">
