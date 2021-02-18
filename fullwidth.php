@@ -58,8 +58,11 @@ get_header(); ?>
 <?php } ?>
 
 <div class="page-builder"> 
+	<?php if($_SERVER['REQUEST_URI'] == '/'){ ?>
 
+	<?php }else{ ?>
 	<br><br>
+<?php } ?>
 
 	<div class="container-fluid"> 
 
@@ -73,7 +76,7 @@ get_header(); ?>
 
 			{ ?>
 
-			<div class="blog-lg-area-left" style="padding: 0">
+			<div class="blog-lg-area-left">
 
 			<?php if( have_posts()) :  the_post(); ?>		
 

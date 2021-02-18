@@ -7,9 +7,7 @@ Template Name: Largura total com barra
 */
 
 get_header(); 
-
-get_template_part('index','banner');
-?>
+get_template_part('index','banner');?>
 
 <!-- Blog Section with Sidebar -->
 
@@ -29,21 +27,37 @@ get_template_part('index','banner');
 		padding: 0;
 	}
 }
+
+	.has-text-align-left, .has-text-align-right, .has-text-align-center, .has-text-align-justify{
+		margin: 0 40px 20px !important;
+	}
+	.blog-lg-area-left{
+		text-align: left !important;
+	}
+	p, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .wp-block-buttons, .wp-block-image	{
+		margin: 0 40px 20px !important;
+	}
+	p.has-background{
+		margin: 0 !important;
+	}
 </style>
+
 <?php if (strpos($_SERVER['REQUEST_URI'], "checkout")) { ?>
 	<style type="text/css">
 		@media (min-width: 768px){
 		.row{
 			margin: 0 35px;
 		} 
-	} 
+	}
+	p, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .wp-block-buttons, .wp-block-image{
+		margin: 0 !important;
+	}
 	</style>
 <?php } ?>
 
 <div class="page-builder"> 
- 
 
-<br><br><br> 
+	<br><br>
 
 	<div class="container-fluid"> 
 
@@ -78,6 +92,8 @@ get_template_part('index','banner');
 		</div>
 
 	</div>
+
+	<br><br>
 
 </div>
 
