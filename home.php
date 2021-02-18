@@ -30,12 +30,20 @@ get_template_part('index','banner');
 	}
 }
 </style>
-
-<div class="clearfix"></div>
-
-<br><br><br><br>
+<?php if (strpos($_SERVER['REQUEST_URI'], "checkout")) { ?>
+	<style type="text/css">
+		@media (min-width: 768px){
+		.row{
+			margin: 0 35px;
+		} 
+	} 
+	</style>
+<?php } ?>
 
 <div class="page-builder"> 
+ 
+
+<br><br><br> 
 
 	<div class="container-fluid"> 
 

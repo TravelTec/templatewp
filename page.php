@@ -56,7 +56,7 @@ $the_query = new WP_Query ( array( 'post_type'=>'post' ) );
 
 <div class="page-builder"> 
  
-	<?php if ($_SERVER['REQUEST_URI'] == '/checkout/') { ?>
+	<?php if (strpos($_SERVER['REQUEST_URI'], "checkout")) { ?>
 		<div class="container-fluid">
 	<?php }else{ ?>
 		<div class="container">

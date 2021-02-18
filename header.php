@@ -467,6 +467,6 @@
 		}
 	} 
 	.footer-sidebar li a, .custom-html-widget{
-		color: <?=$header_setting['footer_text_color'];?>;
+		color: <?=(empty($header_setting['footer_text_color']) ? '#ffffff' : $header_setting['footer_text_color'])?>;
 	}
 </style> 
