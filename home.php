@@ -40,6 +40,10 @@ get_template_part('index','banner');?>
 	p.has-background{
 		margin: 0 !important;
 	}
+	
+	.detail-item h3{
+		margin: 0 !important;
+	}
 </style>
 
 <?php if (strpos($_SERVER['REQUEST_URI'], "checkout")) { ?>

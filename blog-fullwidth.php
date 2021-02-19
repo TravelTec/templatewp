@@ -2,7 +2,7 @@
 
 /**
 
-Template Name: Modelo blog com coluna na esquerda
+Template Name: Modelo blog com coluna na wsquerda
 
 */
 
@@ -10,7 +10,20 @@ get_header();
 
 get_template_part('index','banner');
 
-$the_query = new WP_Query ( array( 'post_type'=>'post' ) );
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+$args = array(
+    'posts_per_page' => 4,
+    'paged'          => $paged,
+);
+$the_query = new WP_Query( $args );
+
+global $wp_query;
+// Put default query object in a temp variable
+$tmp_query = $wp_query;
+// Now wipe it out completely
+$wp_query = null;
+// Re-populate the global with our custom query
+$wp_query = $the_query;
 ?>
 
 <!-- Blog Section with Sidebar -->
@@ -25,6 +38,7 @@ $the_query = new WP_Query ( array( 'post_type'=>'post' ) );
 	}
 	.blog-post-date-area{
 		float: right !important;
+		margin: 0 0 25px 0 !important;
 	}
 	@media (max-width: 767px){
 	.featured-trip .grid .col{
@@ -34,7 +48,8 @@ $the_query = new WP_Query ( array( 'post_type'=>'post' ) );
 		padding: 0;
 	}
 }
-</style> 
+</style>
+ 
 
 <div class="page-builder"> 
 
@@ -43,9 +58,47 @@ $the_query = new WP_Query ( array( 'post_type'=>'post' ) );
 <br><br><br>
 
 <?php if ( $the_query->have_posts() ) { ?>
+	<?php  
+	add_filter('next_posts_link_attributes', 'posts_link_attributes');
+add_filter('previous_posts_link_attributes', 'posts_link_attributes');
+
+function posts_link_attributes() {
+  return 'class="more-link"';
+}
+	?>
+	<?php 
+	$appointment_options=theme_setup_data(); 
+	$current_options = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_options );
+	$link_color = str_replace("#", "", $current_options['link_color']);
+	list($r, $g, $b) = sscanf($current_options['link_color'], "#%02x%02x%02x");
+	$r = $r - 50;
+	$g = $g - 25;
+	$b = $b - 40; 
+	 ?>
+	<style type="text/css"> 
+		a.more-link {
+    background-color: #<?php echo $link_color; ?> !important;  
+    color: #ffffff;
+    text-shadow: 0 1px 0 rgb(0 0 0 / 10%);
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    transition: all 0.3s ease-in-out 0s;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 20px;
+    padding: 13px 35px;
+    margin: 12px 0 3px;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+	</style>
 	<div class="container">
 
-		<div class="row"> 	
+		<div class="row"> 		
 
 			
 
@@ -109,7 +162,7 @@ $the_query = new WP_Query ( array( 'post_type'=>'post' ) );
 
 				the_content( __( 'Read More' , 'appointment' ) );
 
-				wp_link_pages( );
+				
 
 		       ?>
 
@@ -118,15 +171,25 @@ $the_query = new WP_Query ( array( 'post_type'=>'post' ) );
 	</div>
 	<br><br>
 
-			<?php } ?> 
+			<?php 
+
+				}
+				previous_posts_link( '&laquo; Mais recentes' );
+    next_posts_link( 'Mais antigos &raquo;', $the_query->max_num_pages );
+    wp_reset_postdata();
+
+			?> 
 
 			</div>
 
-			<!-- /Blog Area -->		
+			<!-- /Blog Area -->	
 
 		</div>
-
+		<br><br>
 	</div>
+	<?php // Restore original query object
+$wp_query = null;
+$wp_query = $tmp_query; ?>
 		<?php }else{  // show comments ?>
 	<div class="container-fluid"> 
 

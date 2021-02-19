@@ -42,6 +42,9 @@ get_header(); ?>
 	p.has-background{
 		margin: 0 !important;
 	}
+	.detail-item h3{
+		margin: 0 !important;
+	}
 </style>
 
 <?php if (strpos($_SERVER['REQUEST_URI'], "checkout")) { ?>
@@ -75,8 +78,11 @@ get_header(); ?>
 			<?php if( $post->post_content != "" )
 
 			{ ?>
-
-			<div class="blog-lg-area-left">
+				<?php if($_SERVER['REQUEST_URI'] == '/'){ ?>
+			<div class="blog-lg-area-left" style="padding: 0">
+				<?php }else{ ?>
+	<div class="blog-lg-area-left">
+<?php } ?>
 
 			<?php if( have_posts()) :  the_post(); ?>		
 
