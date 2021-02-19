@@ -30,6 +30,13 @@ get_header(); ?>
 	}
 }
 
+@media(min-width: 1650px){
+	.featured-trip{
+		    width: 1330px;
+    margin: 0 auto;
+	}
+}
+
 	.has-text-align-left, .has-text-align-right, .has-text-align-center, .has-text-align-justify{
 		margin: 0 40px 20px !important;
 	}

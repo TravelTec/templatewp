@@ -2,7 +2,7 @@
 
 /**
 
-Template Name: Modelo blog com coluna na wsquerda
+Template Name: Modelo blog com coluna na esquerda
 
 */
 
