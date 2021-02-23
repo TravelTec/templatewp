@@ -3,7 +3,7 @@ Theme Name: Voucher Tec
 Theme URI: https://traveltec.com.br
 Author: Travel tec
 Author URI: https://traveltec.com.br 
-Version: 1.0.29
+Version: 1.0.30
 */
 
 body {
@@ -6264,3 +6264,9 @@ li.cat-item { padding: 5px 20px; }
 .sidebar-widget .seta{
     display: none !important;
 } 
+.footer-widget-section .wpforms-field-label {
+    color: #fff !important;
+}
+.footer-widget-section .wpforms-field-sublabel  {
+    color: #fff !important;
+}
