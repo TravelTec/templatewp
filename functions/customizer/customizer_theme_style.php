@@ -158,6 +158,8 @@ public $type = 'new_menu';
 
 		'type' => 'option',
 
+		'default' => 'wide',
+
 		'sanitize_callback' => 'sanitize_text_field',
 
 		

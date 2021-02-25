@@ -68,7 +68,7 @@ get_header(); ?>
 <?php } ?>
 
 <div class="page-builder"> 
-	<?php if($_SERVER['REQUEST_URI'] == '/'){ ?>
+	<?php if($_SERVER['REQUEST_URI'] == '/' || strpos($_SERVER['REQUEST_URI'], "customize")){ ?>
 
 	<?php }else{ ?>
 	<br><br>
