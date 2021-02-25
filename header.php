@@ -469,4 +469,10 @@
 	.footer-sidebar li a, .custom-html-widget{
 		color: <?=(empty($header_setting['footer_text_color']) ? '#ffffff' : $header_setting['footer_text_color'])?>;
 	}
+	.navbar-default .navbar-nav > li > a{
+		color: <?=(empty($header_setting['header_item_color']) ? '#1b1b1b' : $header_setting['header_item_color'])?>;
+	}
+	.appointment_title_head{
+		color: <?=(empty($header_setting['header_item_color']) ? '#1b1b1b' : $header_setting['header_item_color'])?> !important;
+	}
 </style> 
