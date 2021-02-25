@@ -301,7 +301,7 @@ public $type = 'new_menu';
 
 	'capability'     => 'edit_theme_options',
 
-	'default' => '#ee591f',
+	'default' => '#ffffff',
 
 	'type' => 'option',
 
@@ -334,7 +334,7 @@ public $type = 'new_menu';
 
 	'capability'     => 'edit_theme_options',
 
-	'default' => '#ee591f',
+	'default' => '#ffffff',
 
 	'type' => 'option',
 
