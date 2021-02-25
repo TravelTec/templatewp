@@ -1,10 +1,4 @@
-<?php
-
-/**
-
-Template Name: Modelo blog com coluna na direita
-
-*/
+<?php 
 
 get_header(); 
 

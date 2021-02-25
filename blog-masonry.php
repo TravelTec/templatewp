@@ -2,7 +2,7 @@
 
 /**
 
-Template Name: Modelo blog largura total
+Template Name: Modelo blog padrão
 
 */
 

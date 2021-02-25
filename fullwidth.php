@@ -84,12 +84,8 @@ get_header(); ?>
 
 			<?php if( $post->post_content != "" )
 
-			{ ?>
-				<?php if($_SERVER['REQUEST_URI'] == '/'){ ?>
-			<div class="blog-lg-area-left" style="padding: 0">
-				<?php }else{ ?>
-	<div class="blog-lg-area-left">
-<?php } ?>
+			{ ?> 
+			<div class="blog-lg-area-left" style="padding: 0"> 
 
 			<?php if( have_posts()) :  the_post(); ?>		
 

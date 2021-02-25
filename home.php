@@ -75,7 +75,7 @@ get_template_part('index','banner');?>
 
 			{ ?>
 
-			<div class="blog-lg-area-left">
+			<div class="blog-lg-area-left" style="padding-right: 0">
 
 			<?php if( have_posts()) :  the_post(); ?>		
 

@@ -2,7 +2,7 @@
 
 /**
 
-Template Name: Modelo blog com coluna na esquerda
+Template Name: Modelo blog com coluna lateral
 
 */
 
@@ -35,11 +35,7 @@ $wp_query = $the_query;
 	}
 	.featured-trip{
 		padding: 0 90px;
-	}
-	.blog-post-date-area{
-		float: right !important;
-		margin: 0 0 25px 0 !important;
-	}
+	} 
 	@media (max-width: 767px){
 	.featured-trip .grid .col{
 		width: 100% !important;
@@ -101,16 +97,6 @@ function posts_link_attributes() {
 		<div class="row"> 		
 
 			
-
-			<!--Sidebar Area-->
-
-			<div class="col-md-4">
-
-			<?php get_sidebar(); ?>	
-
-			</div>
-
-			<!--Sidebar Area-->
 
 			<!-- Blog Area -->
 
@@ -183,6 +169,16 @@ function posts_link_attributes() {
 			</div>
 
 			<!-- /Blog Area -->	
+
+			<!--Sidebar Area-->
+
+			<div class="col-md-4">
+
+			<?php get_sidebar(); ?>	
+
+			</div>
+
+			<!--Sidebar Area-->
 
 		</div>
 		<br><br>
