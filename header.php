@@ -19,8 +19,8 @@
 	$exibe_title = get_header_textcolor(); 
 
 	if ($exibe_title === 'blank') {  }else{ ?>
-		
-		<title><?php echo get_bloginfo( 'name' ); ?> - <?php echo get_bloginfo( 'description' ); ?></title>
+		<?php $descricao = (empty(get_bloginfo( 'description' )) ? '' : ' - '.get_bloginfo( 'description' )); ?>
+		<title><?php echo get_bloginfo( 'name' ); ?> <?php echo $descricao ?></title>
 	
 	<?php 
 
@@ -159,8 +159,8 @@
 					<img class="img-responsive" src="<?php echo $header_setting['upload_image_logo']; ?>" style="height:<?php echo $header_setting['height']; ?>px; width:<?php echo $header_setting['width']; ?>px;"/>
 				<?php } ?> 
 					 	<?php if ($exibir_texto_logo == 1 && $exibir_logo != 1) {  ?>
-					 	<?php echo "<div class=appointment_title_head style=''>" . get_bloginfo( 'name' ). "</div>"; }else if ($exibir_texto_logo == 1 && $exibir_logo == 1) { ?> 
-					 		<?php echo "<div class=appointment_title_head style='font-size:15px'>" . get_bloginfo( 'name' ). "</div>"; } ?> 
+					 	<?php echo "<div class=appointment_title_head style=''>" . get_bloginfo( 'name' ). " ".$descricao."</div>"; }else if ($exibir_texto_logo == 1 && $exibir_logo == 1) { ?> 
+					 		<?php echo "<div class=appointment_title_head style='font-size:15px'>" . get_bloginfo( 'name' ). " ".$descricao."</div>"; } ?> 
 
 				</a> 
 
