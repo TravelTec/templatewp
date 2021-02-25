@@ -158,6 +158,8 @@ public $type = 'new_menu';
 
 		'type' => 'option',
 
+		'default' => 'wide',
+
 		'sanitize_callback' => 'sanitize_text_field',
 
 		
@@ -299,7 +301,7 @@ public $type = 'new_menu';
 
 	'capability'     => 'edit_theme_options',
 
-	'default' => '#ee591f',
+	'default' => '#ffffff',
 
 	'type' => 'option',
 
@@ -332,7 +334,7 @@ public $type = 'new_menu';
 
 	'capability'     => 'edit_theme_options',
 
-	'default' => '#ee591f',
+	'default' => '#ffffff',
 
 	'type' => 'option',
 
