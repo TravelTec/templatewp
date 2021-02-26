@@ -57,12 +57,7 @@ a.more-link {
     background-color: #0073aa;
 
 }
-
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-
-	background-color: #0073aa !important;
-
-}
+ 
 
 .dropdown-menu > li > a { border-bottom: 1px solid #006799; }
 

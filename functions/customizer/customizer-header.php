@@ -344,6 +344,36 @@ $wp_customize->remove_control('header_textcolor');
 
     ))); 
 
+	$wp_customize->add_setting(
+
+	'appointment_options[header_button_color]', array(
+
+        'capability'     => 'edit_theme_options',
+
+	'default' => '#ffffff',
+
+	'type' => 'option',
+
+    ));
+
+    $wp_customize->add_control( 
+
+	new WP_Customize_Color_Control( 
+
+	$wp_customize, 
+
+	'appointment_options[header_button_color]', 
+
+	array(
+
+        'label'   => __('Selecione a cor do botão', 'appointment'),
+
+        'section' => 'header_color',
+
+        'settings'   => 'appointment_options[header_button_color]',
+
+    ))); 
+
 	//Header social Icon
 
 

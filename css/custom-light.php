@@ -1103,11 +1103,7 @@ background-color:#<?php echo $link_color; ?>;
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus { background-color: rgb(<?php echo $r; ?>,<?php echo $g; ?>,<?php echo $b;?>) }
 .dropdown-menu > li > a:hover,
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {color:#fff !important;}
-
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-	background-color: #<?php echo $link_color; ?> !important;
-}
+ 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover { color: #<?php echo $link_color; ?> !important; } 
 }

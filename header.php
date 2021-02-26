@@ -475,4 +475,7 @@
 	.appointment_title_head{
 		color: <?=(empty($header_setting['header_item_color']) ? '#1b1b1b' : $header_setting['header_item_color'])?> !important;
 	}
+	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+		background-color: <?=(empty($header_setting['header_button_color']) ? '#1b1b1b' : $header_setting['header_button_color'])?> !important;
+	}
 </style> 
