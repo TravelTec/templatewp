@@ -110,64 +110,25 @@ function posts_link_attributes() {
 
 		while ( $the_query->have_posts() ) { 
 
-			$the_query->the_post();  ?> 
-			<div class="media">						
+			$the_query->the_post();  
+			 
+	global $more;
 
-			<?php
+				$more = 0;
 
-			
-
-			 if(!is_home() && !is_page_template('blog-masonry.php'))
-
-			{
-
-			appointment_aside_meta_content(); 
-
-			}
-
-			elseif(is_home())
-
-			{
-
-			appointment_aside_meta_content(); 
-
-			}
-
-			
-
-			?>
-
-		<div class="media-body">
-
-				<?php // Check Image size for fullwidth template
-
-				 appointment_post_thumbnail('','img-responsive'); 
-				?>
-
-				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-
-		        <?php  
-
-                // call editor content of post/page	
-
-				the_content( __( 'Read More' , 'appointment' ) );
-
-				
-
-		       ?>
-
-		</div>
-
-	</div>
-	<br><br>
-
-			<?php 
+				get_template_part( 'content',get_post_format());
 
 				}
-				previous_posts_link( '&laquo; Mais recentes' );
-    next_posts_link( 'Mais antigos &raquo;', $the_query->max_num_pages );
-    wp_reset_postdata();
 
+				// Previous/next page navigation.
+
+				the_posts_pagination( array(
+
+				'prev_text'          => '<i class="fa fa-angle-double-left"></i>',
+
+				'next_text'          => '<i class="fa fa-angle-double-right"></i>',
+
+				) );
 			?> 
 
 			</div>
