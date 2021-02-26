@@ -57,8 +57,7 @@ function posts_link_attributes() {
 	$b = $b - 40; 
 	 ?>
 	<style type="text/css"> 
-		a.more-link {
-    background-color: #<?php echo $link_color; ?> !important;  
+		a.more-link { 
     color: #ffffff;
     text-shadow: 0 1px 0 rgb(0 0 0 / 10%);
     border-radius: 3px;

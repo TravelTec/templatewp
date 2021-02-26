@@ -18,6 +18,10 @@ function custom_light() {
 .slide-btn-sm, .slide-btn-sm{
     background-color: #<?php echo $link_color; ?> !important;
 }
+a.more-link {
+    background-color: #<?php echo $link_color; ?> !important;   
+}
+
 .callout-btn2{
     background-color: #<?php echo $link_color; ?> !important;
 }
