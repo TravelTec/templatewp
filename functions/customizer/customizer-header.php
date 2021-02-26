@@ -304,7 +304,7 @@ $wp_customize->remove_control('header_textcolor');
 
 	array(
 
-        'label'   => __('Cor de fundo', 'appointment'),
+        'label'   => __('Selecione a cor do fundo', 'appointment'),
 
         'section' => 'header_color',
 
@@ -336,7 +336,7 @@ $wp_customize->remove_control('header_textcolor');
 
 	array(
 
-        'label'   => __('Cor do item', 'appointment'),
+        'label'   => __('Selecione a cor da letra', 'appointment'),
 
         'section' => 'header_color',
 

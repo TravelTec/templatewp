@@ -12,7 +12,7 @@ get_template_part('index','banner');
 
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $args = array(
-    'posts_per_page' => 4,
+    'posts_per_page' => get_option( 'posts_per_page' ),
     'paged'          => $paged,
 );
 $the_query = new WP_Query( $args );

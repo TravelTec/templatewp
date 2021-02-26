@@ -467,10 +467,10 @@
 		}
 	} 
 	.footer-sidebar li a, .custom-html-widget{
-		color: <?=(empty($header_setting['footer_text_color']) ? '#ffffff' : $header_setting['footer_text_color'])?>;
+		color: <?=(empty($header_setting['footer_text_color']) ? '#ffffff' : $header_setting['footer_text_color'])?> !important;
 	}
 	.navbar-default .navbar-nav > li > a{
-		color: <?=(empty($header_setting['header_item_color']) ? '#1b1b1b' : $header_setting['header_item_color'])?>;
+		color: <?=(empty($header_setting['header_item_color']) ? '#1b1b1b' : $header_setting['header_item_color'])?> !important;
 	}
 	.appointment_title_head{
 		color: <?=(empty($header_setting['header_item_color']) ? '#1b1b1b' : $header_setting['header_item_color'])?> !important;
@@ -478,4 +478,5 @@
 	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
 		background-color: <?=(empty($header_setting['header_button_color']) ? '#1b1b1b' : $header_setting['header_button_color'])?> !important;
 	}
+	
 </style> 
