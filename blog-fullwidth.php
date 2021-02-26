@@ -2,7 +2,7 @@
 
 /**
 
-Template Name: Modelo blog com coluna na esquerda
+Template Name: Modelo blog com coluna lateral
 
 */
 
@@ -12,7 +12,7 @@ get_template_part('index','banner');
 
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $args = array(
-    'posts_per_page' => 4,
+    'posts_per_page' => get_option( 'posts_per_page' ),
     'paged'          => $paged,
 );
 $the_query = new WP_Query( $args );
@@ -35,11 +35,7 @@ $wp_query = $the_query;
 	}
 	.featured-trip{
 		padding: 0 90px;
-	}
-	.blog-post-date-area{
-		float: right !important;
-		margin: 0 0 25px 0 !important;
-	}
+	} 
 	@media (max-width: 767px){
 	.featured-trip .grid .col{
 		width: 100% !important;
@@ -102,6 +98,39 @@ function posts_link_attributes() {
 
 			
 
+			<!-- Blog Area -->
+
+			<div class="col-md-8" >
+
+			<?php  
+
+		while ( $the_query->have_posts() ) { 
+
+			$the_query->the_post();  
+			 
+	global $more;
+
+				$more = 0;
+
+				get_template_part( 'content',get_post_format());
+
+				}
+
+				// Previous/next page navigation.
+
+				the_posts_pagination( array(
+
+				'prev_text'          => '<i class="fa fa-angle-double-left"></i>',
+
+				'next_text'          => '<i class="fa fa-angle-double-right"></i>',
+
+				) );
+			?> 
+
+			</div>
+
+			<!-- /Blog Area -->	
+
 			<!--Sidebar Area-->
 
 			<div class="col-md-4">
@@ -111,78 +140,6 @@ function posts_link_attributes() {
 			</div>
 
 			<!--Sidebar Area-->
-
-			<!-- Blog Area -->
-
-			<div class="col-md-8" >
-
-			<?php 
-
-		while ( $the_query->have_posts() ) { 
-
-			$the_query->the_post();  ?> 
-			<div class="media">						
-
-			<?php
-
-			
-
-			 if(!is_home() && !is_page_template('blog-masonry.php'))
-
-			{
-
-			appointment_aside_meta_content(); 
-
-			}
-
-			elseif(is_home())
-
-			{
-
-			appointment_aside_meta_content(); 
-
-			}
-
-			
-
-			?>
-
-		<div class="media-body">
-
-				<?php // Check Image size for fullwidth template
-
-				 appointment_post_thumbnail('','img-responsive'); 
-				?>
-
-				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-
-		        <?php  
-
-                // call editor content of post/page	
-
-				the_content( __( 'Read More' , 'appointment' ) );
-
-				
-
-		       ?>
-
-		</div>
-
-	</div>
-	<br><br>
-
-			<?php 
-
-				}
-				previous_posts_link( '&laquo; Mais recentes' );
-    next_posts_link( 'Mais antigos &raquo;', $the_query->max_num_pages );
-    wp_reset_postdata();
-
-			?> 
-
-			</div>
-
-			<!-- /Blog Area -->	
 
 		</div>
 		<br><br>

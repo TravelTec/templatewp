@@ -274,7 +274,7 @@ $wp_customize->remove_control('header_textcolor');
 
     $wp_customize->add_section( 'header_color' , array(
 
-		'title'      => __('Cor de fundo', 'appointment'),
+		'title'      => __('Cores', 'appointment'),
 
 		'panel'  => 'header_options',
 
@@ -304,7 +304,7 @@ $wp_customize->remove_control('header_textcolor');
 
 	array(
 
-        'label'   => __('Selecione a cor', 'appointment'),
+        'label'   => __('Selecione a cor do fundo', 'appointment'),
 
         'section' => 'header_color',
 
@@ -312,8 +312,67 @@ $wp_customize->remove_control('header_textcolor');
 
     ))); 
 	 
+ 
 
-	
+	$wp_customize->add_setting(
+
+	'appointment_options[header_item_color]', array(
+
+        'capability'     => 'edit_theme_options',
+
+	'default' => '#000000',
+
+	'type' => 'option',
+
+    ));
+
+    $wp_customize->add_control( 
+
+	new WP_Customize_Color_Control( 
+
+	$wp_customize, 
+
+	'appointment_options[header_item_color]', 
+
+	array(
+
+        'label'   => __('Selecione a cor da letra', 'appointment'),
+
+        'section' => 'header_color',
+
+        'settings'   => 'appointment_options[header_item_color]',
+
+    ))); 
+
+	$wp_customize->add_setting(
+
+	'appointment_options[header_button_color]', array(
+
+        'capability'     => 'edit_theme_options',
+
+	'default' => '#ffffff',
+
+	'type' => 'option',
+
+    ));
+
+    $wp_customize->add_control( 
+
+	new WP_Customize_Color_Control( 
+
+	$wp_customize, 
+
+	'appointment_options[header_button_color]', 
+
+	array(
+
+        'label'   => __('Selecione a cor do botão', 'appointment'),
+
+        'section' => 'header_color',
+
+        'settings'   => 'appointment_options[header_button_color]',
+
+    ))); 
 
 	//Header social Icon
 

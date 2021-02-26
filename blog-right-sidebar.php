@@ -1,10 +1,4 @@
-<?php
-
-/**
-
-Template Name: Modelo padrão com coluna na direita
-
-*/
+<?php 
 
 get_header();
 
