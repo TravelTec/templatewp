@@ -424,7 +424,7 @@
 
 <div class="clearfix"></div>
 
-<?php $color = $header_setting['background_color']; ?> 
+<?php $color = (isset($header_setting['background_color']) ? $header_setting['background_color'] : '#ffffff'); ?> 
 <?php $color_page = $header_setting['page_builder_color']; ?>
 
 <?php if($_GET['page_id'] == 11 || $_SERVER['REQUEST_URI'] == '/checkout/'){ ?> 
