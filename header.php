@@ -26,7 +26,7 @@
 
 	}
 
-	if($header_setting['upload_image_favicon']!=''){ ?> 
+	if (isset($header_setting['upload_image_favicon'])) { ?>
 
 	<link rel="icon" href="<?php  echo $header_setting['upload_image_favicon']; ?>" sizes="32x32" />
 <link rel="icon" href="<?php  echo $header_setting['upload_image_favicon']; ?>" sizes="192x192" />
@@ -425,9 +425,10 @@
 <div class="clearfix"></div>
 
 <?php $color = (isset($header_setting['background_color']) ? $header_setting['background_color'] : '#ffffff'); ?> 
-<?php $color_page = $header_setting['page_builder_color']; ?>
+<?php $color_page = (isset($header_setting['page_builder_color']) ? $header_setting['page_builder_color'] : '#ffffff'); ?>
 
-<?php if($_GET['page_id'] == 11 || $_SERVER['REQUEST_URI'] == '/checkout/'){ ?> 
+
+<?php if($_SERVER['REQUEST_URI'] == '/checkout/'){ ?> 
 
 	<style type="text/css">
 	.page-builder{
