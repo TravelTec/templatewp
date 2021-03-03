@@ -49,7 +49,8 @@ function my_theme_update_checker_setting() {
 
     // (Opcional) Set the branch that contains the stable release.
 
-    $myUpdateChecker->setBranch('vouchertec-template'); 
+
+    $myUpdateChecker->setBranch('vouchertec-template');  
 
 }
 
