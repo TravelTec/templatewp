@@ -501,6 +501,10 @@
 
 .blog-lg-area-right { padding: 0px 0px 60px 0px; } 
 
+.titulo_responsivo{
+    width: 100% !important;
+}
+
 /*Image Paragraph Alignment*/
 
 .blog-paragraph-image { margin: 15px 10px 10px 0; }
