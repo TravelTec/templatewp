@@ -73,12 +73,7 @@ get_header(); ?>
 	</style>
 <?php } ?>
 
-<div class="page-builder"> 
-	<?php if($_SERVER['REQUEST_URI'] == '/' || strpos($_SERVER['REQUEST_URI'], "customize")){ ?>
-
-	<?php }else{ ?>
-	<br><br>
-<?php } ?>
+<div class="page-builder">  
 
 	<div class="container-fluid"> 
 

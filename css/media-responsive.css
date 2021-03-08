@@ -505,7 +505,7 @@
     width: 100% !important;
 }
 .padding_responsivo{
-    padding: 0px 15px;
+    padding: 0px 15px !important;
 }
 
 /*Image Paragraph Alignment*/
