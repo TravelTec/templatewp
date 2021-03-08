@@ -32,6 +32,9 @@ get_header(); ?>
 	.wp-block-latest-posts.is-grid{
 		padding: 0 43px;
 	}
+	.wpsm_row{
+		margin: 0 auto !important;
+	}
 
 @media(min-width: 1650px){
 	.featured-trip{
