@@ -29,6 +29,9 @@ get_header(); ?>
 		padding: 0;
 	}
 }
+	.wp-block-latest-posts.is-grid{
+		padding: 0 43px;
+	}
 
 @media(min-width: 1650px){
 	.featured-trip{

@@ -389,6 +389,9 @@
 .exibe_celular{
     display: block !important;
 }
+.wp-block-latest-posts.is-grid{
+    padding: 0 15px !important;
+}
 
 /*Header Contact Info*/
 
