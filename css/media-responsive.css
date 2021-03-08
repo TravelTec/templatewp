@@ -504,6 +504,9 @@
 .titulo_responsivo{
     width: 100% !important;
 }
+.padding_responsivo{
+    padding: 0px 15px;
+}
 
 /*Image Paragraph Alignment*/
 
