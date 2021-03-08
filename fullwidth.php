@@ -50,7 +50,7 @@ get_header(); ?>
 		text-align: left !important;
 	}
 	p, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .wp-block-buttons, .wp-block-image	{
-		margin: 0 40px 20px !important;
+		margin: 20px 40px 20px !important;
 	}
 	p.has-background{
 		margin: 0 !important;
