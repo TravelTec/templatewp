@@ -267,6 +267,9 @@ div.wpforms-container-full .wpforms-form .wpforms-field-label{
     font-weight: 400;
     color: rgba(35, 35, 35, 0.7);
 }
+.category-trips-single .category-trips-single-inner-wrap .category-trip-fig img{
+    height: 250px;
+}
 .category-main-wrap.category-grid .category-trip-prc-title-wrap .category-trip-title {
     
     font-size: 18px;
@@ -591,6 +594,7 @@ div.wpforms-container-full .wpforms-form .wpforms-field-label{
         width: 100%;
     border-radius: 5px 5px 0 0;
         max-height: 366px;
+        height: 300px;
 }
 
 .featured-trip .grid .img-holder .price-holder:after {

@@ -354,6 +354,14 @@
 
 .navbar-header h1 { margin-right: 0px; }
 
+.site-footer {  
+    padding: 15px 0 0 !important;
+}
+
+.featured-trip .grid .img-holder img{
+    height: 200px !important;
+}
+
 /*Menus*/
 
 .navbar-collapse.in { overflow: hidden; }
