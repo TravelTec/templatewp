@@ -3,7 +3,7 @@ Theme Name: Voucher Tec - Beta
 Theme URI: https://traveltec.com.br
 Author: Travel tec
 Author URI: https://traveltec.com.br     
-Version: 1.1.21
+Version: 1.1.22
 */
 
 body {
@@ -6203,7 +6203,7 @@ li.cat-item { padding: 5px 20px; }
 
 .site-footer { 
     margin: 0;
-    padding: 0;
+    padding: 20px 0 0;
     width: 100%; 
     border-top: 3px solid #ddd !important;
     border-bottom: 3px solid #ddd !important;
