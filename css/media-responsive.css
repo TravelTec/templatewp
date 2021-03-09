@@ -350,7 +350,7 @@
 
 .navbar-brand { display: block; float: left; margin-right: 0; padding: 10px 15px; text-align: center; padding-left: 10px !important; }
 
-.navbar-brand img { display: block; margin: 0 auto; text-align: center; }
+.navbar-brand img { display: block; margin: 0 auto; text-align: center; height: 32px !important;width: auto !important;margin-top: 10px !important; }
 
 .navbar-header h1 { margin-right: 0px; }
 
