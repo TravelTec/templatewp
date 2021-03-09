@@ -2,8 +2,8 @@
 Theme Name: Voucher Tec
 Theme URI: https://traveltec.com.br 
 Author: Travel tec 
-Author URI: https://traveltec.com.br     
-Version: 1.1.9
+Author URI: https://traveltec.com.br  
+Version: 1.1.25
 */
 
 body {
@@ -6203,7 +6203,7 @@ li.cat-item { padding: 5px 20px; }
 
 .site-footer { 
     margin: 0;
-    padding: 80px 0 0;
+    padding: 0;
     width: 100%; 
     border-top: 3px solid #ddd !important;
     border-bottom: 3px solid #ddd !important;
@@ -6238,16 +6238,21 @@ li.cat-item { padding: 5px 20px; }
 }
 .footer-sidebar li {
     list-style: none;
-    padding: 0 20px;
+    padding: 0 0px;
+}
+.footer-sidebar ul { 
+    padding: 0 0px;
 }
 .footer-sidebar li:before {
-    position: absolute; 
-    left: 0px; 
+    position: inherit;
+    left: 0px;
     color: #ddd !important;
         font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f00c";
+        padding-right: 6px;
 }
+
 .datepicker--content{
     display: block !important;
 }

@@ -145,7 +145,7 @@
 
 	<div class="container">
 
-		<!-- Brand and toggle get grouped for better mobile display -->
+		<!-- Brand and toggle get grouped for better mobile display --> 
 
 		<div class="navbar-header"> 
 					<?php $site_description = get_bloginfo( 'description', 'display' );  ?>
@@ -163,9 +163,20 @@
 					 		<?php echo "<div class=appointment_title_head style='font-size:15px'>" . get_bloginfo( 'name' ). " ".$descricao."</div>"; } ?> 
 
 				</a> 
+				<span class="exibe_celular" style=" 
+				
+				display:none;
+				top: 11px;
+				position: relative;
+				color: #888;
+				font-size: 13.5px;
+				float: right;
+				margin-right: 66px;
 
+
+">
+				Menu</span>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-
 				<span class="sr-only"><?php echo 'Toggle navigation'; ?></span>
 
 				<span class="icon-bar"></span>

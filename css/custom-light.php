@@ -267,6 +267,9 @@ div.wpforms-container-full .wpforms-form .wpforms-field-label{
     font-weight: 400;
     color: rgba(35, 35, 35, 0.7);
 }
+.category-trips-single .category-trips-single-inner-wrap .category-trip-fig img{
+    height: 250px;
+}
 .category-main-wrap.category-grid .category-trip-prc-title-wrap .category-trip-title {
     
     font-size: 18px;
@@ -276,6 +279,101 @@ div.wpforms-container-full .wpforms-form .wpforms-field-label{
     margin: 8px 0 7px;
 
 }
+.wte-category-outer-wrap, .category-main-wrap.category-grid{
+    width: 100%;
+}
+.category-main-wrap.category-grid, .trip-content-area .wp-travel-engine-archive-repeater-wrap{
+    margin: 0 !important;
+}
+.trip-content-area { 
+    padding: 20px 90px !important; 
+}
+.wpte-bf-price-wrap .wpte-bf-price:last-child{
+    display: block !important;
+}
+.wpte-bf-datepicker .ui-datepicker-inline .ui-widget-header{
+    background: rgba(50,182,122, 0.07) !important;
+    padding: 13px 0 !important;
+    border-bottom: none !important;
+}
+.wpte-bf-step-content .ui-datepicker table{
+        border: none !important;
+    background-color: #fff !important;
+}
+.wpte-bf-datepicker .ui-datepicker td a.ui-state-default, .wpte-bf-datepicker .ui-datepicker td a.ui-state-default:hover{
+    background: rgba(50,182,122, 1) !important;
+    color: #FFF !important;
+}
+.wpte-bf-step-content .wpte-bf-number-field button {
+    color: rgba(50,182,122, 1) !important;
+    background: rgba(50,182,122, 0.03) !important;
+    border: solid 1px rgba(50,182,122, 0.05) !important;
+}
+.wpte-bf-step-content .wpte-bf-number-field {
+    border: 1px solid rgba(50,182,122, 0.4) !important;
+    width: 100px !important;
+    height: 40px !important;
+}
+.wpte-bf-step-content .wpte-bf-price ins {
+    color: rgba(50,182,122, 1) !important;
+    font-size: 18px !important;
+}
+.wpte-bf-help-block {
+    background: #FFF !important;
+    font-size: 13px !important;
+    border-top: 1px solid rgba(50,182,122, 0.2) !important;
+    font-weight: 500 !important;
+    color: #232323 !important;
+}
+.trip-content-area .widget-area .secondary-trip-info {
+    margin: 0 0 30px;
+}   
+.secondary-trip-info .wte-trip-facts {
+    background: #f6f6f6;
+    border: 1px solid #d5d5d5;
+    border-radius: 5px;
+    padding: 30px;
+    margin: 50px 0 0;
+}
+.secondary-trip-info .wte-trip-facts .widget-title {
+    font-size: 14px;
+    line-height: 1.5em;
+    color: #111;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0 0 25px;
+}
+#secondary .trip-facts-value {
+    grid-row-gap: 10px;
+}
+.trip-facts-value {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+ul:not(.browser-default)>li {
+    list-style-type: none;
+}
+
+.trip-facts-value li {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 0 15px;
+    margin: 0 0 20px;
+    max-width: 100%;
+    min-width: 230px;
+}
+.trip-facts-value li .trip-facts-text {
+    align-items: flex-start;
+    flex: 1 0 0;
+}
+
 
 .category-main-wrap.category-grid .category-trips-single-inner-wrap .category-trip-fig .category-disc-feat-wrap {
     top: 20px;
@@ -551,6 +649,8 @@ div.wpforms-container-full .wpforms-form .wpforms-field-label{
     padding: 0 0 40px 60px;
     border-left: 2px dotted rgba(0, 0, 0, 0.1);
 }
+
+
     .featured-trip .grid .text-holder .title a:focus, .featured-trip .grid .text-holder .title a:hover {
     text-decoration: none;
     color: #<?php echo $link_color; ?>;
@@ -591,6 +691,7 @@ div.wpforms-container-full .wpforms-form .wpforms-field-label{
         width: 100%;
     border-radius: 5px 5px 0 0;
         max-height: 366px;
+        height: 300px;
 }
 
 .featured-trip .grid .img-holder .price-holder:after {

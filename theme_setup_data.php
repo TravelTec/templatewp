@@ -70,7 +70,7 @@ function theme_setup_data()
 
 	'link_color' => '#ee591f',
 
-	'link_color_enable' => false,
+	'link_color_enable' => true,
 
 	'color_theme_enable' => false,
 

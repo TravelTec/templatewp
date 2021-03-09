@@ -2,18 +2,16 @@
 
 /**
 
-Template Name: Largura total sem barra
+Template Name: Largura total com barra
 
 */
 
-get_header(); ?>
+get_header();
+get_template_part('index','banner'); ?>
 
 <!-- Blog Section with Sidebar -->
 
-<style type="text/css">
-	.page-title-section{
-		display: none !important;
-	}
+<style type="text/css"> 
 	.page-builder { margin: 0px; padding: 0; }
 	.featured-trip .grid .col{
 		width: 33.33% !important;
@@ -58,6 +56,9 @@ get_header(); ?>
 	.detail-item h3{
 		margin: 0 !important;
 	}
+	.page-title-section .overlay { 
+    padding: 27px 27px !important;
+}
 </style>
 
 <?php if (strpos($_SERVER['REQUEST_URI'], "checkout")) { ?>
@@ -73,7 +74,12 @@ get_header(); ?>
 	</style>
 <?php } ?>
 
-<div class="page-builder">  
+<div class="page-builder"> 
+	<?php if($_SERVER['REQUEST_URI'] == '/' || strpos($_SERVER['REQUEST_URI'], "customize")){ ?>
+
+	<?php }else{ ?>
+	<br><br>
+<?php } ?>
 
 	<div class="container-fluid"> 
 

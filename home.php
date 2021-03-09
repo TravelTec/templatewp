@@ -1,10 +1,4 @@
-<?php
-
-/**
-
-Template Name: Largura total com barra
-
-*/
+<?php 
 
 get_header(); 
 get_template_part('index','banner');
@@ -57,7 +51,8 @@ function posts_link_attributes() {
 	$b = $b - 40; 
 	 ?>
 	<style type="text/css"> 
-		a.more-link { 
+		a.more-link {
+    background-color: #<?php echo $link_color; ?> !important;  
     color: #ffffff;
     text-shadow: 0 1px 0 rgb(0 0 0 / 10%);
     border-radius: 3px;

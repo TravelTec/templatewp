@@ -66,7 +66,7 @@ $the_query = new WP_Query ( array( 'post_type'=>'post' ) );
 
 			<!-- Blog Area -->
 
-			<div class="col-md-12" style="padding: 0">
+			<div class="col-md-12 padding_responsivo" style="padding: 0">
 
 				<?php the_content(); ?>
 
