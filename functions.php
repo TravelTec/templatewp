@@ -353,6 +353,21 @@ function custom_background_function()
 }
 add_action('wp_head','custom_background_function',10,0);
 
+if($_SERVER['REQUEST_URI'] == '/'){ 
+	add_filter( 'wp_enqueue_scripts', 'change_default_jquery', PHP_INT_MAX );
+
+	function change_default_jquery( ){
+	    wp_dequeue_script( 'all');
+	    wp_deregister_script( 'all');   
+	    wp_dequeue_script( 'all-js');
+	    wp_deregister_script( 'all-js');   
+	    wp_dequeue_script( 'v4-shims-js');
+	    wp_deregister_script( 'v4-shims-js');   
+	    wp_dequeue_script( 'v4-shims-js');
+	    wp_deregister_script( 'v4-shims-js');   
+	}
+}
+
 
 
 

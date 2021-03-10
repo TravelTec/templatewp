@@ -1305,7 +1305,14 @@ blockquote {border-left: 5px solid #<?php echo $link_color; ?>;}
 
 .woocommerce ul.products li.product:hover .onsale { border: 2px solid #<?php echo $link_color; ?>; }
 .woocommerce-message, .woocommerce-info { border-top-color: #<?php echo $link_color; ?>; }
+
+.wpsm_service-content h3{
+    margin: 0 !important;
+}
+.wpsm_service-content p{
+    margin: 10px 0px !important;
+}
 </style>
 <?php
-	endif;
-}
+	endif; 
+}  

@@ -53,8 +53,9 @@
 			?>
 
 		<div class="media-body"> 
+				<h3 class="display_responsivo_block" style="margin: 4px 0px;font-size: 18px;"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
-				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+				<h3 class="display_responsivo_none"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
 		        <?php  
 

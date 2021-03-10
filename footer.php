@@ -138,8 +138,13 @@ $footer_setting = wp_parse_args(  get_option( 'appointment_options', array() ), 
 
 <?php wp_footer(); ?>
 
+
 </div>
 
+
+
 </body>
+
+
 
 </html>
