@@ -26,6 +26,7 @@
 			
 			?>
 		<div class="media-body">
+				<h3 class="display_responsivo_block" style="margin: 4px 0px;font-size: 21px;"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 				<?php // Check Image size for fullwidth template
 				 appointment_post_thumbnail('','img-responsive');
 				 
@@ -43,7 +44,7 @@
 				 appointment_post_meta_content();
 				}
 				?>
-				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+				<h3 class="display_responsivo_none"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 		        <?php  
                 // call editor content of post/page	
 				the_content( __( 'Read More' , 'appointment' ) );
