@@ -286,7 +286,7 @@ div.wpforms-container-full .wpforms-form .wpforms-field-label{
     margin: 0 !important;
 }
 .trip-content-area { 
-    padding: 20px 90px !important; 
+    padding: 20px 90px; 
 }
 .wpte-bf-price-wrap .wpte-bf-price:last-child{
     display: block !important;
